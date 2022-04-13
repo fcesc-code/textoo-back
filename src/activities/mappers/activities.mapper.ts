@@ -1,5 +1,5 @@
-import { SelectTextActivityDto } from '../dtos/select-text-activity.dto';
-import { SelectTextActivityEntity } from '../entity/select-text.activity.entity';
+// import { SelectTextActivityDto } from '../dtos/select-text-activity.dto';
+// import { SelectTextActivityEntity } from '../entity/select-text.activity.entity';
 
 export class ActivitiesMapper {
   selectText() {
