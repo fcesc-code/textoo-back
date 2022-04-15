@@ -5,6 +5,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { BestOptionActivitySchema } from './schemas/best-option.activity.schema';
 import { SelectTextActivitySchema } from './schemas/select-text.activity.schema';
 import { TransformAspectActivitySchema } from './schemas/transform-aspect.activity.schema';
+import { ActivitiesRepository } from './repositories/activities.repository';
 
 @Module({
   imports: [
@@ -28,7 +29,7 @@ import { TransformAspectActivitySchema } from './schemas/transform-aspect.activi
     ]),
   ],
   controllers: [ActivitiesController],
-  providers: [ActivitiesService], // add here ActivitiesMapper
+  providers: [ActivitiesService, ActivitiesRepository],
   exports: [ActivitiesService],
 })
 export class ActivitiesModule {}
