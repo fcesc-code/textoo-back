@@ -1,6 +1,4 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import {
   DB_ACTIVITIES_KEYS,
@@ -14,7 +12,6 @@ import { ActivitiesModule } from './activities/activities.module';
 
 @Module({
   imports: [
-    ActivitiesModule,
     MongooseModule.forRoot(DB_ACTIVITIES_KEYS, {
       connectionName: DB_ACTIVITIES_NAME,
     }),
@@ -24,8 +21,7 @@ import { ActivitiesModule } from './activities/activities.module';
     MongooseModule.forRoot(DB_USERS_KEYS, {
       connectionName: DB_USERS_NAME,
     }),
+    ActivitiesModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
 })
 export class AppModule {}

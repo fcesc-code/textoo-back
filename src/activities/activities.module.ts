@@ -1,35 +1,44 @@
 import { Module } from '@nestjs/common';
-import { ActivitiesController } from './controllers/activities.controller';
-import { ActivitiesService } from './services/activities.service';
 import { MongooseModule } from '@nestjs/mongoose';
+
+import { BestOptionActivitiesController } from './controllers/best-option-activities.controller';
 import { BestOptionActivitySchema } from './schemas/best-option.activity.schema';
+import { BestOptionActivitiesRepository } from './repositories/best-option-activity.repository';
+
+import { SelectTextActivitiesController } from './controllers/select-text-activities.controller';
 import { SelectTextActivitySchema } from './schemas/select-text.activity.schema';
+import { SelectTextActivitiesRepository } from './repositories/select-text-activity.repository';
+
+import { TransformAspectActivitiesController } from './controllers/transform-aspect-activities.controller';
 import { TransformAspectActivitySchema } from './schemas/transform-aspect.activity.schema';
-import { ActivitiesRepository } from './repositories/activities.repository';
+import { TransformAspectActivitiesRepository } from './repositories/transform-aspect-activity.repository';
 
 @Module({
   imports: [
-    MongooseModule.forFeature([
-      {
-        name: 'BestOptionActivitySchema',
-        schema: BestOptionActivitySchema,
-      },
-    ]),
-    MongooseModule.forFeature([
-      {
-        name: 'SelectTextActivitySchema',
-        schema: SelectTextActivitySchema,
-      },
-    ]),
-    MongooseModule.forFeature([
-      {
-        name: 'TransformAspectActivitySchema',
-        schema: TransformAspectActivitySchema,
-      },
-    ]),
+    // MongooseModule.forFeature([
+    //   {
+    //     name: 'BestOptionActivitySchema',
+    //     schema: BestOptionActivitySchema,
+    //   },
+    //   {
+    //     name: 'SelectTextActivitySchema',
+    //     schema: SelectTextActivitySchema,
+    //   },
+    //   {
+    //     name: 'TransformAspectActivitySchema',
+    //     schema: TransformAspectActivitySchema,
+    //   },
+    // ]),
   ],
-  controllers: [ActivitiesController],
-  providers: [ActivitiesService, ActivitiesRepository],
-  exports: [ActivitiesService],
+  controllers: [
+    BestOptionActivitiesController,
+    SelectTextActivitiesController,
+    TransformAspectActivitiesController,
+  ],
+  providers: [
+    BestOptionActivitiesRepository,
+    SelectTextActivitiesRepository,
+    TransformAspectActivitiesRepository,
+  ],
 })
 export class ActivitiesModule {}
