@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 
+import { DB_ACTIVITIES_NAME } from 'KEYS/BBDD.KEYS';
 import { MODELS } from './models/activities.models';
 
 import { BestOptionActivitySchema } from './schemas/best-option.activity.schema';
@@ -17,20 +18,23 @@ import { TransformAspectActivitiesController } from './controllers/transform-asp
 
 @Module({
   imports: [
-    MongooseModule.forFeature([
-      {
-        name: MODELS.bestOption,
-        schema: BestOptionActivitySchema,
-      },
-      {
-        name: MODELS.selectText,
-        schema: SelectTextActivitySchema,
-      },
-      {
-        name: MODELS.transformAspect,
-        schema: TransformAspectActivitySchema,
-      },
-    ]),
+    MongooseModule.forFeature(
+      [
+        {
+          name: MODELS.bestOption,
+          schema: BestOptionActivitySchema,
+        },
+        {
+          name: MODELS.selectText,
+          schema: SelectTextActivitySchema,
+        },
+        {
+          name: MODELS.transformAspect,
+          schema: TransformAspectActivitySchema,
+        },
+      ],
+      DB_ACTIVITIES_NAME,
+    ),
   ],
   controllers: [
     BestOptionActivitiesController,

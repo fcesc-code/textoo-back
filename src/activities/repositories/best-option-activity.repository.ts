@@ -13,7 +13,9 @@ export class BestOptionActivitiesRepository {
     private BestOptionActivityModel: Model<BestOptionActivityDto>,
   ) {}
 
-  async findAll(): Promise<any[]> {
-    return this.BestOptionActivityModel.find();
+  async findAll(): Promise<BestOptionActivityDto[]> {
+    const data = await this.BestOptionActivityModel.find();
+    console.log('RECEIVED AT REPOSITORY: ', data);
+    return data;
   }
 }
