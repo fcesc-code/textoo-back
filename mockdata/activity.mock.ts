@@ -115,6 +115,7 @@ estalviat, ara no té més diners que el sou.`,
     work: 'Gramàtica zero',
     reference: 'https://www.uv.es/llengues/gramaticazero',
   },
+  keywords: ['conjuncions'],
 };
 
 export const MOCK_ACTIVITY_TRANSFORM_ASPECT = {
@@ -126,17 +127,8 @@ export const MOCK_ACTIVITY_TRANSFORM_ASPECT = {
   author: 'ef4f0e28-86f8-4d2d-a56a-8b24d3286867',
   type: 'transform_aspect',
   scores: {
-    maxPossibleScore: 0,
-    currentScore: 0,
-    lastScore: 0,
-    bestScore: 0,
-    averageScore: 0,
-    correctAnswers: 0,
-    inunansweredAnswers: 0,
-    questions: 0,
     scorePerQuestion: 0,
     timeToComplete: 0,
-    timesPlayed: 0,
   },
   language: 'ca',
   title: `La veu passiva`,
@@ -168,4 +160,5 @@ export const MOCK_ACTIVITY_TRANSFORM_ASPECT = {
     work: '',
     reference: '',
   },
+  keywords: ['veu passiva'],
 };

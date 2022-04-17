@@ -1,15 +1,17 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { ActivitiesController } from './activities.controller';
+import { BestOptionActivitiesController } from './best-option-activities.controller';
 
 describe('ActivitiesController', () => {
-  let controller: ActivitiesController;
+  let controller: BestOptionActivitiesController;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      controllers: [ActivitiesController],
+      controllers: [BestOptionActivitiesController],
     }).compile();
 
-    controller = module.get<ActivitiesController>(ActivitiesController);
+    controller = module.get<BestOptionActivitiesController>(
+      BestOptionActivitiesController,
+    );
   });
 
   it('should be defined', () => {

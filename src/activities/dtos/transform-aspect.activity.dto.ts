@@ -6,7 +6,7 @@ import {
   Question_ActivityTransformAspect,
 } from './transform-aspect.activity.interfaces';
 
-export class BestOptionActivityDto extends ActivityDto {
+export class TransformAspectActivityDto extends ActivityDto {
   @ApiProperty()
   readonly _text: string;
 

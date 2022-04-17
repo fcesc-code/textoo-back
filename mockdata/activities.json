@@ -1,0 +1,147 @@
+[
+  {
+    "id": "62568ab632fa9c667feb5cde",
+    "timestamps": {
+      "created": "2020-04-01T00:00:00.000Z",
+      "modified": "2020-04-01T00:00:00.000Z"
+    },
+    "author": "ef4f0e28-86f8-4d2d-a56a-8b24d3286867",
+    "type": "select_text",
+    "scores": {
+      "scorePerQuestion": 5,
+      "timeToComplete": 0
+    },
+    "language": "ca",
+    "title": "Ho veus clar?",
+    "task": "Selecciona totes les paradoxes del text",
+    "text": "És quan dormo que hi veig clar\nFoll d'una dolça metzina,\nAmb perles a cada mà\nVisc al cor d'una petxina,\nSó la font del comellar\nI el jaç de la salvatgina,\n-O la lluna que s'afina\nEn morir carena enllà.\nÉs quan dormo que hi veig clar\nFoll d'una dolça metzina.",
+    "positions": [
+      { "start": 0, "end": 30, "index": 1 },
+      { "start": 203, "end": 233, "index": 2 }
+    ],
+    "font": {
+      "display": true,
+      "author": "Joan Vicenç Foix",
+      "year": 1953,
+      "work": "Poemes",
+      "reference": "https://ca.wikipedia.org/wiki/Josep_Vicen%C3%A7_Foix_i_Mas"
+    },
+    "keywords": ["paradoxes", "figures retòriques"]
+  },
+  {
+    "id": "62568aef32fa9c667feb5cdf",
+    "timestamps": {
+      "created": "2020-04-01T00:00:00.000Z",
+      "modified": "2020-04-01T00:00:00.000Z"
+    },
+    "author": "47d8ddb3-b36e-4e72-912c-425ef31bd951",
+    "type": "best_option",
+    "scores": {
+      "scorePerQuestion": 5,
+      "timeToComplete": 0
+    },
+    "language": "ca",
+    "title": "Qui l'encerta l'endevina",
+    "task": "Tria l'expressió correcta",
+    "text": "Duia pantalons curts, és a dir, que no encara els dotze anys.\nS'han suspès tots els vols la boira.\nProposem un enfocament les polítiques de mercat.\nA la nit podríem fer peix de carn.\nplovia, vam jugar el partit.\nestalviat, ara no té més diners que el sou.",
+    "questions": [
+      {
+        "id": "1",
+        "position": 38,
+        "options": [
+          { "text": "hauria fet", "correct": false, "index": 1 },
+          { "text": "devia haver fet", "correct": true, "index": 2 }
+        ]
+      },
+      {
+        "id": "2",
+        "position": 88,
+        "options": [
+          { "text": "degut a", "correct": false, "index": 1 },
+          { "text": "a causa de", "correct": true, "index": 2 }
+        ]
+      },
+      {
+        "id": "3",
+        "position": 121,
+        "options": [
+          { "text": "en base a", "correct": false, "index": 1 },
+          { "text": "a partir de", "correct": true, "index": 2 }
+        ]
+      },
+      {
+        "id": "4",
+        "position": 173,
+        "options": [
+          { "text": "enlloc", "correct": false, "index": 1 },
+          { "text": "en lloc", "correct": true, "index": 2 }
+        ]
+      },
+      {
+        "id": "5",
+        "position": 183,
+        "options": [
+          { "text": "Malgrat", "correct": false, "index": 1 },
+          { "text": "Malgrat que", "correct": true, "index": 2 }
+        ]
+      },
+      {
+        "id": "6",
+        "position": 212,
+        "options": [
+          { "text": "Al no haver", "correct": false, "index": 1 },
+          { "text": "Com que no ha", "correct": true, "index": 2 }
+        ]
+      }
+    ],
+    "font": {
+      "display": true,
+      "author": "Francesc Esteve i Gómez",
+      "year": 2011,
+      "work": "Gramàtica zero",
+      "reference": "https://www.uv.es/llengues/gramaticazero"
+    }
+  },
+  {
+    "id": "62568b1032fa9c667feb5ce0",
+    "timestamps": {
+      "created": "2020-04-01T00:00:00.000Z",
+      "modified": "2020-04-01T00:00:00.000Z"
+    },
+    "author": "ef4f0e28-86f8-4d2d-a56a-8b24d3286867",
+    "type": "transform_aspect",
+    "scores": {
+      "scorePerQuestion": 5,
+      "timeToComplete": 0
+    },
+    "language": "ca",
+    "title": "La veu passiva",
+    "task": "Transforma la oració següent a veu passiva",
+    "text": "1. Quan escoltava la ràdio va sentir una forta explosió.\n2. Els dos germans van votar a favor d'aprovar la llei.",
+    "questions": [
+      {
+        "start": 3,
+        "end": 56,
+        "providedtext": "Quan escoltava la ràdio, va sentir una forta explosió.",
+        "validSolutions": [
+          "Quam hom escoltava la ràdio, es va sentir una forta explosió."
+        ]
+      },
+      {
+        "start": 63,
+        "end": 115,
+        "providedtext": "Els dos germans van votar a favor d'aprovar la llei.",
+        "validSolutions": [
+          "La llei va ser votada favorablement per els dos germans."
+        ]
+      }
+    ],
+    "font": {
+      "display": false,
+      "author": "",
+      "year": 0,
+      "work": "",
+      "reference": ""
+    }
+  }
+]

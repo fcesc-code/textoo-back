@@ -1,3 +1,5 @@
+import { SupportedLanguages } from 'src/shared/interfaces/global.interfaces';
+
 export interface Timestamps {
   created: Date;
   modified: Date;
@@ -46,10 +48,4 @@ export enum ActivityType {
   REMOVE_SURPLUS_WORDS = 'remove_surplus_words',
   ADD_MISSING_WORDS = 'add_missing_words',
   TRANSFORM_ASPECT = 'transform_aspect',
-}
-
-export enum SupportedLanguages {
-  ES = 'es',
-  CA = 'ca',
-  EN = 'en',
 }

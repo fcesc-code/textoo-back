@@ -4,9 +4,9 @@ import {
   ActivityType,
   Font,
   Score,
-  SupportedLanguages,
   Timestamps,
 } from './activity.interfaces';
+import { SupportedLanguages } from 'src/shared/interfaces/global.interfaces';
 
 export abstract class ActivityDto {
   @ApiProperty()
