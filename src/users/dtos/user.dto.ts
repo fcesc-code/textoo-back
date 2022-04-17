@@ -1,27 +1,45 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { SupportedLanguages } from 'src/shared/interfaces/global.interfaces';
 
-export abstract class UserDto {
+export abstract class NewUserDto {
   @ApiProperty()
-  readonly _id!: string | null;
+  readonly alias: string;
 
   @ApiProperty()
-  readonly alias!: string;
+  readonly avatar: string;
 
   @ApiProperty()
-  readonly avatar!: string;
+  readonly activeGroups: string[];
 
   @ApiProperty()
-  readonly activeGroups!: string[];
+  readonly roles: Roles[];
 
   @ApiProperty()
-  readonly roles!: Roles[];
+  readonly likedActivities: string[];
 
   @ApiProperty()
-  readonly likedActivities!: string[];
+  readonly preferences: Preferences;
 
+  constructor({
+    alias,
+    avatar,
+    activeGroups,
+    roles,
+    likedActivities,
+    preferences,
+  }: UserConstructor) {
+    this.alias = alias;
+    this.avatar = avatar;
+    this.activeGroups = activeGroups;
+    this.roles = roles;
+    this.likedActivities = likedActivities;
+    this.preferences = preferences;
+  }
+}
+
+export abstract class UserDto extends NewUserDto {
   @ApiProperty()
-  readonly preferences!: Preferences;
+  readonly _id: string;
 
   constructor({
     _id,
@@ -32,13 +50,8 @@ export abstract class UserDto {
     likedActivities,
     preferences,
   }: UserConstructor) {
+    super({ alias, avatar, activeGroups, roles, likedActivities, preferences });
     this._id = _id || null;
-    this.alias = alias;
-    this.avatar = avatar;
-    this.activeGroups = activeGroups;
-    this.roles = roles;
-    this.likedActivities = likedActivities;
-    this.preferences = preferences;
   }
 }
 
@@ -67,4 +80,18 @@ export enum Roles {
   'administrator',
   'teacher',
   'learner',
+}
+
+export class UserNotFoundError extends Error {
+  constructor(id: string) {
+    super(`User ${id} not found`);
+    this.name = 'UserNotFoundError';
+  }
+}
+
+export class UserAlreadyExistsError extends Error {
+  constructor(username: string) {
+    super(`User ${username} already exists`);
+    this.name = 'UserAlreadyExistsError';
+  }
 }
