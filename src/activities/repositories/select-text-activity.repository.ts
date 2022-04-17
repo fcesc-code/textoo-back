@@ -1,13 +1,13 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { DB_ACTIVITIES_NAME } from 'KEYS/BBDD.KEYS';
 import { Model } from 'mongoose';
 import { SelectTextActivityDto } from '../dtos/select-text-activity.dto';
+import { MODELS } from '../models/activities.models';
 
 @Injectable()
 export class SelectTextActivitiesRepository {
   constructor(
-    @InjectModel(DB_ACTIVITIES_NAME)
+    @InjectModel(MODELS.selectText)
     private SelectTextActivityModel: Model<SelectTextActivityDto>,
   ) {}
 

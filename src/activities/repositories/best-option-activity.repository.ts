@@ -1,17 +1,19 @@
 import { Injectable } from '@nestjs/common';
-import { InjectModel } from '@nestjs/mongoose';
-import { DB_ACTIVITIES_NAME } from 'KEYS/BBDD.KEYS';
 import { Model } from 'mongoose';
+import { InjectModel } from '@nestjs/mongoose';
 import { BestOptionActivityDto } from '../dtos/best-option.activity.dto';
+import { MODELS } from '../models/activities.models';
+// import { BestOptionActivityValidator } from '../validators/best-option-activity.validator';
+// import { BestOptionActivityModel } from '../schemas/best-option.activity.schema';
 
 @Injectable()
 export class BestOptionActivitiesRepository {
   constructor(
-    @InjectModel(DB_ACTIVITIES_NAME)
+    @InjectModel(MODELS.bestOption)
     private BestOptionActivityModel: Model<BestOptionActivityDto>,
   ) {}
 
-  async findAllBestOptionActivity(): Promise<BestOptionActivityDto[]> {
+  async findAll(): Promise<any[]> {
     return this.BestOptionActivityModel.find();
   }
 }

@@ -1,13 +1,12 @@
-import mongoose from 'mongoose';
-const { Schema } = mongoose;
+import * as mongoose from 'mongoose';
 
-const SelectTextActivityPositionSchema = new Schema({
+const SelectTextActivityPositionSchema = new mongoose.Schema({
   start: Number,
   end: Number,
   index: Number,
 });
 
-const SelectTextActivitySchema = new Schema({
+const SelectTextActivitySchema = new mongoose.Schema({
   title: String,
   task: String,
   author: String,
@@ -32,5 +31,10 @@ const SelectTextActivitySchema = new Schema({
   keywords: [String],
   positions: [SelectTextActivityPositionSchema],
 });
+
+// const SelectTextActivityModel = mongoose.model(
+//   'SelectTextActivity',
+//   SelectTextActivitySchema,
+// );
 
 export { SelectTextActivitySchema };

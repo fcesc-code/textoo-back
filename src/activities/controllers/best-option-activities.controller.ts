@@ -16,7 +16,9 @@ export class BestOptionActivitiesController {
   constructor(private bestOptionActivitiesDB: BestOptionActivitiesRepository) {}
 
   @Get('/api/activities/best-option')
-  async getAllBestOptionActivities(): Promise<ActivitiesDto[]> {
-    return this.bestOptionActivitiesDB.findAllBestOptionActivity();
+  async getAllBestOptionActivities(): Promise<any> {
+    const result = this.bestOptionActivitiesDB.findAll();
+    console.log('RECEIVED AT CONTROLLER: ', result);
+    return result;
   }
 }

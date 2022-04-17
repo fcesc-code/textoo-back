@@ -1,14 +1,13 @@
-import mongoose from 'mongoose';
-const { Schema } = mongoose;
+import * as mongoose from 'mongoose';
 
-const TransformAspectActivityQuestionSchema = new Schema({
+const TransformAspectActivityQuestionSchema = new mongoose.Schema({
   start: Number,
   end: Number,
   providedText: String,
   validSolutions: [String],
 });
 
-const TransformAspectActivitySchema = new Schema({
+const TransformAspectActivitySchema = new mongoose.Schema({
   title: String,
   task: String,
   author: String,
@@ -33,5 +32,10 @@ const TransformAspectActivitySchema = new Schema({
   keywords: [String],
   questions: [TransformAspectActivityQuestionSchema],
 });
+
+// const TransformAspectActivityModel = mongoose.model(
+//   'TransformAspectActivity',
+//   TransformAspectActivitySchema,
+// );
 
 export { TransformAspectActivitySchema };

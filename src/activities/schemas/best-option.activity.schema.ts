@@ -1,19 +1,18 @@
-import mongoose from 'mongoose';
-const { Schema } = mongoose;
+import * as mongoose from 'mongoose';
 
-const BestOptionActivityOptionSchema = new Schema({
+const BestOptionActivityOptionSchema = new mongoose.Schema({
   text: String,
   correct: Boolean,
   index: Number,
 });
 
-const BestOptionActivityQuestionSchema = new Schema({
+const BestOptionActivityQuestionSchema = new mongoose.Schema({
   id: String,
   position: Number,
   options: [BestOptionActivityOptionSchema],
 });
 
-const BestOptionActivitySchema = new Schema({
+const BestOptionActivitySchema = new mongoose.Schema({
   title: String,
   task: String,
   author: String,
@@ -38,5 +37,10 @@ const BestOptionActivitySchema = new Schema({
   keywords: [String],
   questions: [BestOptionActivityQuestionSchema],
 });
+
+// const BestOptionActivityModel = mongoose.model(
+//   'BestOptionActivity',
+//   BestOptionActivitySchema,
+// );
 
 export { BestOptionActivitySchema };

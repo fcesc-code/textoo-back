@@ -24,4 +24,10 @@ import { ActivitiesModule } from './activities/activities.module';
     ActivitiesModule,
   ],
 })
-export class AppModule {}
+export class AppModule {
+  constructor() {
+    console.log('DB_ACTIVITIES_KEYS: ', DB_ACTIVITIES_KEYS);
+    console.log('DB_GROUPS_KEYS: ', DB_GROUPS_KEYS);
+    console.log('DB_USERS_KEYS: ', DB_USERS_KEYS);
+  }
+}
