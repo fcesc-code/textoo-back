@@ -3,9 +3,9 @@ import {
   ActivityType,
   Font,
   Score,
-  SupportedLanguages,
   Timestamps,
 } from '../dtos/activity.interfaces';
+import { SupportedLanguages } from '../../shared/interfaces/global.interfaces';
 import { Question_ActivityBestOption } from '../dtos/best-option.activity.interfaces';
 
 export class BestOptionActivityValidator {

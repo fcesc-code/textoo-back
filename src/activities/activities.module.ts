@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 
-import { DB_ACTIVITIES_NAME } from 'KEYS/BBDD.KEYS';
+import { DB_ACTIVITIES_COLLECTION } from 'KEYS/BBDD.KEYS';
 import { MODELS } from './models/activities.models';
 
 import { BestOptionActivitySchema } from './schemas/best-option.activity.schema';
@@ -33,7 +33,7 @@ import { TransformAspectActivitiesController } from './controllers/transform-asp
           schema: TransformAspectActivitySchema,
         },
       ],
-      DB_ACTIVITIES_NAME,
+      DB_ACTIVITIES_COLLECTION,
     ),
   ],
   controllers: [

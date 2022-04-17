@@ -1,3 +1,4 @@
+import { DB_ACTIVITIES_COLLECTION } from 'KEYS/BBDD.KEYS';
 import * as mongoose from 'mongoose';
 
 const BestOptionActivityOptionSchema = new mongoose.Schema({
@@ -12,31 +13,34 @@ const BestOptionActivityQuestionSchema = new mongoose.Schema({
   options: [BestOptionActivityOptionSchema],
 });
 
-const BestOptionActivitySchema = new mongoose.Schema({
-  title: String,
-  task: String,
-  author: String,
-  type: String,
-  language: String,
-  text: String,
-  scores: {
-    scorePerQuestion: Number,
-    timeToComplete: Number,
-  },
-  timestamps: {
-    created: Date,
-    modified: Date,
-  },
-  font: {
-    display: Boolean,
+const BestOptionActivitySchema = new mongoose.Schema(
+  {
+    title: String,
+    task: String,
     author: String,
-    year: Number,
-    work: String,
-    reference: String,
+    type: String,
+    language: String,
+    text: String,
+    scores: {
+      scorePerQuestion: Number,
+      timeToComplete: Number,
+    },
+    timestamps: {
+      created: Date,
+      modified: Date,
+    },
+    font: {
+      display: Boolean,
+      author: String,
+      year: Number,
+      work: String,
+      reference: String,
+    },
+    keywords: [String],
+    questions: [BestOptionActivityQuestionSchema],
   },
-  keywords: [String],
-  questions: [BestOptionActivityQuestionSchema],
-});
+  { collection: DB_ACTIVITIES_COLLECTION },
+);
 
 // const BestOptionActivityModel = mongoose.model(
 //   'BestOptionActivity',

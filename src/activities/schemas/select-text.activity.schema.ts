@@ -1,3 +1,4 @@
+import { DB_ACTIVITIES_COLLECTION } from 'KEYS/BBDD.KEYS';
 import * as mongoose from 'mongoose';
 
 const SelectTextActivityPositionSchema = new mongoose.Schema({
@@ -6,31 +7,34 @@ const SelectTextActivityPositionSchema = new mongoose.Schema({
   index: Number,
 });
 
-const SelectTextActivitySchema = new mongoose.Schema({
-  title: String,
-  task: String,
-  author: String,
-  type: String,
-  language: String,
-  text: String,
-  scores: {
-    scorePerQuestion: Number,
-    timeToComplete: Number,
-  },
-  timestamps: {
-    created: Date,
-    modified: Date,
-  },
-  font: {
-    display: Boolean,
+const SelectTextActivitySchema = new mongoose.Schema(
+  {
+    title: String,
+    task: String,
     author: String,
-    year: Number,
-    work: String,
-    reference: String,
+    type: String,
+    language: String,
+    text: String,
+    scores: {
+      scorePerQuestion: Number,
+      timeToComplete: Number,
+    },
+    timestamps: {
+      created: Date,
+      modified: Date,
+    },
+    font: {
+      display: Boolean,
+      author: String,
+      year: Number,
+      work: String,
+      reference: String,
+    },
+    keywords: [String],
+    positions: [SelectTextActivityPositionSchema],
   },
-  keywords: [String],
-  positions: [SelectTextActivityPositionSchema],
-});
+  { collection: DB_ACTIVITIES_COLLECTION },
+);
 
 // const SelectTextActivityModel = mongoose.model(
 //   'SelectTextActivity',
