@@ -33,7 +33,7 @@ export class SharedActivitiesRepository {
 
   async findByKeyword(keyword: string): Promise<ActivityDto[]> {
     const data = await this.ActivityModel.find({
-      $text: { $search: keyword },
+      keywords: keyword,
     }).exec();
     return data;
   }

@@ -21,6 +21,11 @@ export class UsersRepository {
     return data;
   }
 
+  async findByEmail(email: string): Promise<UserDto> {
+    const data = await this.UserModel.findOne({ email }).exec();
+    return data;
+  }
+
   async create(user: NewUserDto): Promise<UserDto> {
     const userWithId: UserDto = this.addId(user);
     const data = await this.UserModel.create(userWithId);
@@ -53,5 +58,21 @@ export class UsersRepository {
       { returnOriginal: false },
     ).exec();
     return data;
+  }
+
+  async aliasAlreadyExist(user: Partial<UserDto>): Promise<boolean> {
+    const exists = await this.UserModel.findOne({ alias: user.alias })
+      .limit(1)
+      .count()
+      .exec();
+    return exists > 0 ? true : false;
+  }
+
+  async emailAlreadyExist(user: Partial<UserDto>): Promise<boolean> {
+    const exists = await this.UserModel.findOne({ email: user.email })
+      .limit(1)
+      .count()
+      .exec();
+    return exists > 0 ? true : false;
   }
 }

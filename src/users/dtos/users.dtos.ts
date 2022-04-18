@@ -1,6 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { ObjectId } from 'mongodb';
 import { SupportedLanguages } from 'src/shared/interfaces/global.interfaces';
+import { UserRoles } from 'src/shared/interfaces/global.interfaces';
 
 export abstract class NewUserDto {
   @ApiProperty()
@@ -13,13 +14,19 @@ export abstract class NewUserDto {
   readonly activeGroups: string[];
 
   @ApiProperty()
-  readonly roles: Roles[];
+  readonly roles: UserRoles[];
 
   @ApiProperty()
   readonly likedActivities: string[];
 
   @ApiProperty()
   readonly preferences: Preferences;
+
+  @ApiProperty()
+  readonly email: string;
+
+  @ApiProperty()
+  readonly password: string;
 
   constructor({
     alias,
@@ -28,6 +35,8 @@ export abstract class NewUserDto {
     roles,
     likedActivities,
     preferences,
+    email,
+    password,
   }: UserConstructor) {
     this.alias = alias;
     this.avatar = avatar;
@@ -35,6 +44,8 @@ export abstract class NewUserDto {
     this.roles = roles;
     this.likedActivities = likedActivities;
     this.preferences = preferences;
+    this.email = email;
+    this.password = password;
   }
 }
 
@@ -50,8 +61,19 @@ export class UserDto extends NewUserDto {
     roles,
     likedActivities,
     preferences,
+    email,
+    password,
   }: UserConstructor) {
-    super({ alias, avatar, activeGroups, roles, likedActivities, preferences });
+    super({
+      alias,
+      avatar,
+      activeGroups,
+      roles,
+      likedActivities,
+      preferences,
+      email,
+      password,
+    });
     this._id = _id;
   }
 }
@@ -65,6 +87,7 @@ export interface UserInfo {
   alias: string;
   avatar: string;
   preferences: Preferences;
+  email: string;
 }
 
 export interface UserConstructor {
@@ -72,15 +95,11 @@ export interface UserConstructor {
   alias: string;
   avatar: string;
   activeGroups: string[];
-  roles: Roles[];
+  roles: UserRoles[];
   likedActivities: string[];
   preferences: Preferences;
-}
-
-export enum Roles {
-  'administrator',
-  'teacher',
-  'learner',
+  email: string;
+  password: string;
 }
 
 export class UserNotFoundError extends Error {
