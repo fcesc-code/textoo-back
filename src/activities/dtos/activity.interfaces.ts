@@ -26,7 +26,6 @@ export interface ActivityConstructor {
   font: Font;
   title: string;
   author: string;
-  activityId?: string;
   scores: Score;
 }
 

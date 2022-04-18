@@ -21,7 +21,6 @@ export class NewSelectTextActivityDto extends ActivityDto {
     task,
     font,
     title,
-    activityId,
     scores,
     keywords,
     timestamps,
@@ -35,7 +34,6 @@ export class NewSelectTextActivityDto extends ActivityDto {
       task,
       font,
       title,
-      activityId,
       scores,
     });
     this.keywords = keywords;
@@ -88,6 +86,6 @@ export class SelectTextActivityDto extends NewSelectTextActivityDto {
       text,
       positions,
     });
-    this._id = _id;
+    this._id = new ObjectId(_id);
   }
 }

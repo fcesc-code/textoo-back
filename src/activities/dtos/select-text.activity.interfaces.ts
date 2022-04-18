@@ -1,5 +1,3 @@
-import { ObjectId } from 'mongodb';
-
 import { ActivityConstructor, Timestamps } from './activity.interfaces';
 
 export interface Position {
@@ -9,7 +7,7 @@ export interface Position {
 }
 
 export interface SelectTextActivityConstructor extends ActivityConstructor {
-  _id?: ObjectId;
+  _id?: string;
   text: string;
   positions: Position[];
   timestamps: Timestamps;

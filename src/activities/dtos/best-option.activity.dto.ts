@@ -86,6 +86,6 @@ export class BestOptionActivityDto extends NewBestOptionActivityDto {
       text,
       questions,
     });
-    this._id = _id;
+    this._id = new ObjectId(_id);
   }
 }
