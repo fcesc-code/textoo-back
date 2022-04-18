@@ -4,11 +4,11 @@ import { ActivityDto, NewActivityDto } from '../dtos/activities.dto';
 
 @Injectable()
 export class SharedActivitiesService {
-  addId(user: NewActivityDto): ActivityDto {
-    const userWithId: ActivityDto = {
-      ...user,
+  addId(activity: NewActivityDto): ActivityDto {
+    const activityWithId = {
+      ...activity,
       _id: new Types.ObjectId(),
     };
-    return userWithId;
+    return activityWithId as ActivityDto;
   }
 }

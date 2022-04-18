@@ -14,9 +14,15 @@ import {
 export type ActivityDto =
   | BestOptionActivityDto
   | SelectTextActivityDto
-  | TransformAspectActivityDto;
+  | TransformAspectActivityDto
+  | (BestOptionActivityDto &
+      SelectTextActivityDto &
+      TransformAspectActivityDto);
 
 export type NewActivityDto =
   | NewBestOptionActivityDto
   | NewSelectTextActivityDto
-  | NewTransformAspectActivityDto;
+  | NewTransformAspectActivityDto
+  | (NewBestOptionActivityDto &
+      NewSelectTextActivityDto &
+      NewTransformAspectActivityDto);

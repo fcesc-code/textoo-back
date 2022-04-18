@@ -38,7 +38,7 @@ export abstract class NewUserDto {
   }
 }
 
-export abstract class UserDto extends NewUserDto {
+export class UserDto extends NewUserDto {
   @ApiProperty()
   readonly _id: ObjectId;
 
