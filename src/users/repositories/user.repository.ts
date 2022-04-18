@@ -30,7 +30,7 @@ export class UserRepository {
   addId(user: NewUserDto): UserDto {
     const userWithId: UserDto = {
       ...user,
-      _id: String(new Types.ObjectId()),
+      _id: new Types.ObjectId(),
     };
     return userWithId;
   }
@@ -46,12 +46,12 @@ export class UserRepository {
     return data;
   }
 
-  async update(userId: string, changes: any): Promise<UserDto> {
+  async update(userId: string, changes: Partial<UserDto>): Promise<UserDto> {
     const data = await this.UserModel.findByIdAndUpdate(
       { _id: userId },
       changes,
-      { new: true },
-    );
+      { returnOriginal: false },
+    ).exec();
     return data;
   }
 }

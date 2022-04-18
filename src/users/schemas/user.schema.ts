@@ -1,19 +1,15 @@
-import { DB_USERS_COLLECTION } from 'KEYS/BBDD.KEYS';
 import * as mongoose from 'mongoose';
 
-const UserSchema = new mongoose.Schema(
-  {
-    _id: String,
-    alias: String,
-    avatar: String,
-    activeGroups: [String],
-    roles: [String],
-    likedActivities: [String],
-    preferences: {
-      language: String,
-    },
+const UserSchema = new mongoose.Schema({
+  _id: { type: String, trim: true },
+  alias: { type: String, trim: true },
+  avatar: { type: String, trim: true },
+  activeGroups: [{ type: String, trim: true }],
+  roles: [{ type: String, trim: true }],
+  likedActivities: [{ type: String, trim: true }],
+  preferences: {
+    language: { type: String, trim: true },
   },
-  { collection: DB_USERS_COLLECTION },
-);
+});
 
 export { UserSchema };

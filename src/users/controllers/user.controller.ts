@@ -76,7 +76,7 @@ export class UserController {
   async updateUser(
     @Res() res,
     @Param('userId') userId: string,
-    @Body() changes: unknown,
+    @Body() changes: Partial<UserDto>,
   ): Promise<UserDto> {
     const userExists = await this.userDB.findById(userId);
     if (!userExists) {
