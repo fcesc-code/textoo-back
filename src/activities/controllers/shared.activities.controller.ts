@@ -33,11 +33,11 @@ export class SharedActivitiesController {
     @Param('activityId', ValidActivityIdPipe) activityId: string,
   ): Promise<ActivityDto> {
     const data = await this.activityDB.findById(activityId);
-    if (!data) {
-      return res.status(HttpStatus.NOT_FOUND).json({
-        message: 'Activity not found',
-      });
-    }
+    // if (!data) {
+    //   return res.status(HttpStatus.NOT_FOUND).json({
+    //     message: 'Activity not found',
+    //   });
+    // }
     return res.status(HttpStatus.OK).json(data);
   }
 
