@@ -6,7 +6,7 @@ import { UsersRepository } from '../repositories/users.repository';
 export class ExistUserAliasPipe implements PipeTransform {
   constructor(private usersDB: UsersRepository) {}
   async transform(value: UserConstructor) {
-    const exists: boolean = await this.usersDB.userAliasAlreadyExist(value);
+    const exists: boolean = await this.usersDB.aliasAlreadyExist(value);
 
     if (exists) {
       throw new BadRequestException('User alias already exists');

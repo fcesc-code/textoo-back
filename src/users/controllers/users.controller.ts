@@ -25,8 +25,6 @@ import { ValidUserIdPipe } from '../pipes/valid-user-id.pipe';
 export class UsersController {
   constructor(private userDB: UsersRepository) {}
 
-  TITLE = 'UserController';
-
   @Get('/all')
   @ApiBearerAuth('access_token')
   @UseGuards(AuthGuard('jwt'))
@@ -43,11 +41,11 @@ export class UsersController {
     @Param('userId', ValidUserIdPipe) userId: string,
   ): Promise<UserDto> {
     const data = await this.userDB.findById(userId);
-    if (!data) {
-      return res.status(HttpStatus.NOT_FOUND).json({
-        message: 'User Not Found',
-      });
-    }
+    // if (!data) {
+    //   return res.status(HttpStatus.NOT_FOUND).json({
+    //     message: 'User Not Found',
+    //   });
+    // }
     return res.status(HttpStatus.OK).json(data);
   }
 

@@ -54,4 +54,11 @@ export class GroupsRepository {
     ).exec();
     return data;
   }
+  async aliasAlreadyExist(group: Partial<GroupDto>): Promise<boolean> {
+    const exists = await this.GroupModel.findOne({ alias: group.alias })
+      .limit(1)
+      .count()
+      .exec();
+    return exists > 0 ? true : false;
+  }
 }
