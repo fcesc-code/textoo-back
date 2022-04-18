@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { Model, Types } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
-import { NewUserDto, UserDto } from '../dtos/users.dtos';
+import { NewUserDto, UserConstructor, UserDto } from '../dtos/users.dtos';
 import { DB_USERS_COLLECTION } from '../../KEYS/BBDD.KEYS';
 
 @Injectable()
@@ -18,6 +18,11 @@ export class UsersRepository {
 
   async findById(id: string): Promise<UserDto> {
     const data = await this.UserModel.findById(id).exec();
+    return data;
+  }
+
+  async findByEmail(email: string): Promise<UserDto> {
+    const data = await this.UserModel.findOne({ email }).exec();
     return data;
   }
 
@@ -53,5 +58,21 @@ export class UsersRepository {
       { returnOriginal: false },
     ).exec();
     return data;
+  }
+
+  async userAliasAlreadyExist(user: UserConstructor): Promise<boolean> {
+    const exists = await this.UserModel.findOne({ alias: user.alias })
+      .limit(1)
+      .count()
+      .exec();
+    return exists > 0 ? true : false;
+  }
+
+  async userEmailAlreadyExist(user: UserConstructor): Promise<boolean> {
+    const exists = await this.UserModel.findOne({ email: user.email })
+      .limit(1)
+      .count()
+      .exec();
+    return exists > 0 ? true : false;
   }
 }
