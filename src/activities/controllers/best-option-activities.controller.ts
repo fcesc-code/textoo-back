@@ -8,15 +8,15 @@ import {
   // Post,
   // Put,
 } from '@nestjs/common';
-import { ActivitiesDto } from '../dtos/activities.dto';
-import { BestOptionActivitiesRepository } from '../repositories/best-option-activity.repository';
+import { ActivityDto } from '../dtos/activities.dto';
+import { BestOptionActivitiesRepository } from '../repositories/best-option.activities.repository';
 
 @Controller('activities')
 export class BestOptionActivitiesController {
   constructor(private bestOptionActivitiesDB: BestOptionActivitiesRepository) {}
 
   @Get('/best-option')
-  async getAllBestOptionActivities(): Promise<ActivitiesDto[]> {
+  async getAllBestOptionActivities(): Promise<ActivityDto[]> {
     const result = await this.bestOptionActivitiesDB.findAll();
     console.log('RECEIVED AT CONTROLLER: ', result);
     return result;

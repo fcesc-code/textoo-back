@@ -10,9 +10,6 @@ import { SupportedLanguages } from 'src/shared/interfaces/global.interfaces';
 
 export abstract class ActivityDto {
   @ApiProperty()
-  readonly id: string | null;
-
-  @ApiProperty()
   readonly type: ActivityType;
 
   @ApiProperty()
@@ -47,9 +44,7 @@ export abstract class ActivityDto {
     font,
     title,
     scores,
-    id,
   }: AbstractActivityConstructor) {
-    this.id = id || null;
     this.type = type;
     this.language = language;
     this.author = author;

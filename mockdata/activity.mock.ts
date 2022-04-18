@@ -1,5 +1,7 @@
+import { SupportedLanguages } from 'src/shared/interfaces/global.interfaces';
+
 export const MOCK_ACTIVITY_SELECT_TEXT = {
-  id: '9e26ab71-a2d0-43b5-b0fa-38910b7ebe1b',
+  _id: '9e26ab71-a2d0-43b5-b0fa-38910b7ebe1b',
   timestamps: {
     created: new Date('2020-04-01T00:00:00.000Z'),
     modified: new Date('2020-04-01T00:00:00.000Z'),
@@ -10,7 +12,7 @@ export const MOCK_ACTIVITY_SELECT_TEXT = {
     scorePerQuestion: 5,
     timeToComplete: 0,
   },
-  language: 'ca',
+  language: 'ca' as SupportedLanguages,
   title: `Ho veus clar?`,
   task: `Selecciona totes les paradoxes del text`,
   text: `És quan dormo que hi veig clar
@@ -38,7 +40,7 @@ Foll d'una dolça metzina.`,
 };
 
 export const MOCK_ACTIVITY_BEST_OPTION = {
-  id: '120460f9-5a23-4050-95a9-4f9d1de87672',
+  _id: '120460f9-5a23-4050-95a9-4f9d1de87672',
   timestamps: {
     created: new Date('2020-04-01T00:00:00.000Z'),
     modified: new Date('2020-04-01T00:00:00.000Z'),
@@ -49,7 +51,7 @@ export const MOCK_ACTIVITY_BEST_OPTION = {
     scorePerQuestion: 5,
     timeToComplete: 0,
   },
-  language: 'ca',
+  language: 'ca' as SupportedLanguages,
   title: `Qui l'encerta l'endevina`,
   task: `Tria l'expressió correcta`,
   text: `Duia pantalons curts, és a dir, que no encara els dotze anys.
@@ -119,7 +121,7 @@ estalviat, ara no té més diners que el sou.`,
 };
 
 export const MOCK_ACTIVITY_TRANSFORM_ASPECT = {
-  id: 'ae40070d-6edd-4e95-aab7-8ad5a02ebc8a',
+  _id: 'ae40070d-6edd-4e95-aab7-8ad5a02ebc8a',
   timestamps: {
     created: new Date('2020-04-01T00:00:00.000Z'),
     modified: new Date('2020-04-01T00:00:00.000Z'),
@@ -130,7 +132,7 @@ export const MOCK_ACTIVITY_TRANSFORM_ASPECT = {
     scorePerQuestion: 0,
     timeToComplete: 0,
   },
-  language: 'ca',
+  language: 'ca' as SupportedLanguages,
   title: `La veu passiva`,
   task: `Transforma la oració següent a veu passiva`,
   text: `1. Quan escoltava la ràdio va sentir una forta explosió.

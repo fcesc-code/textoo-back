@@ -1,6 +1,6 @@
 export const MOCK_USERS = [
   {
-    id: '6256851832fa9c667feb5cda',
+    _id: '6256851832fa9c667feb5cda',
     alias: 'Mr.Robot',
     avatar: 'https://thispersondoesnotexist.com/image',
     activeGroups: [
@@ -14,7 +14,7 @@ export const MOCK_USERS = [
     },
   },
   {
-    id: '6256866c32fa9c667feb5cdb',
+    _id: '6256866c32fa9c667feb5cdb',
     alias: 'Darleene',
     avatar: 'https://thispersondoesnotexist.com/image',
     activeGroups: ['9e26ab71-a2d0-43b5-b0fa-38910b7ebe1b'],

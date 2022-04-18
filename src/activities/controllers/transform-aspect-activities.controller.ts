@@ -8,8 +8,8 @@ import {
   // Post,
   // Put,
 } from '@nestjs/common';
-import { ActivitiesDto } from '../dtos/activities.dto';
-import { TransformAspectActivitiesRepository } from '../repositories/transform-aspect-activity.repository';
+import { ActivityDto } from '../dtos/activities.dto';
+import { TransformAspectActivitiesRepository } from '../repositories/transform-aspect.activities.repository';
 
 @Controller('activities')
 export class TransformAspectActivitiesController {
@@ -18,7 +18,7 @@ export class TransformAspectActivitiesController {
   ) {}
 
   @Get('/api/activities/transform-aspect')
-  async getAllTransformAspectActivities(): Promise<ActivitiesDto[]> {
+  async getAllTransformAspectActivities(): Promise<ActivityDto[]> {
     return this.transformAspectActivitiesDB.findAllTransformAspectActivity();
   }
 }

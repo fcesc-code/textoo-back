@@ -8,15 +8,15 @@ import {
   // Post,
   // Put,
 } from '@nestjs/common';
-import { ActivitiesDto } from '../dtos/activities.dto';
-import { SelectTextActivitiesRepository } from '../repositories/select-text-activity.repository';
+import { ActivityDto } from '../dtos/activities.dto';
+import { SelectTextActivitiesRepository } from '../repositories/select-text.activities.repository';
 
 @Controller('activities')
 export class SelectTextActivitiesController {
   constructor(private selectTextActivitiesDB: SelectTextActivitiesRepository) {}
 
   @Get('/api/activities/select-text')
-  async getAllSelectTextActivities(): Promise<ActivitiesDto[]> {
+  async getAllSelectTextActivities(): Promise<ActivityDto[]> {
     return this.selectTextActivitiesDB.findAllSelectTextActivity();
   }
 }

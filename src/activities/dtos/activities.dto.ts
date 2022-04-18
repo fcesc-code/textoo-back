@@ -1,8 +1,22 @@
-import { BestOptionActivityDto } from './best-option.activity.dto';
-import { SelectTextActivityDto } from './select-text-activity.dto';
-import { TransformAspectActivityDto } from './transform-aspect.activity.dto';
+import {
+  BestOptionActivityDto,
+  NewBestOptionActivityDto,
+} from './best-option.activity.dto';
+import {
+  NewSelectTextActivityDto,
+  SelectTextActivityDto,
+} from './select-text-activity.dto';
+import {
+  NewTransformAspectActivityDto,
+  TransformAspectActivityDto,
+} from './transform-aspect.activity.dto';
 
-export type ActivitiesDto =
+export type ActivityDto =
   | BestOptionActivityDto
   | SelectTextActivityDto
   | TransformAspectActivityDto;
+
+export type NewActivityDto =
+  | NewBestOptionActivityDto
+  | NewSelectTextActivityDto
+  | NewTransformAspectActivityDto;
