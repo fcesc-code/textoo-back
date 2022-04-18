@@ -1,4 +1,4 @@
-import { Test, TestingModule } from '@nestjs/testing';
+import { Test } from '@nestjs/testing';
 import { UsersRepository } from './users.repository';
 
 // describe('UsersRepository', () => {
@@ -17,8 +17,9 @@ import { UsersRepository } from './users.repository';
 //     expect(usersDB).toBeDefined();
 //   });
 
-//   it(`${TITLE} 2 > service should be defined`, () => {
-//     expect(usersDB).toBeDefined();
+//   it(`${TITLE} 2 > service should be defined`, async () => {
+//     const data = await usersDB.findAll();
+//     expect(data).toBeDefined();
 //   });
 // });
 
