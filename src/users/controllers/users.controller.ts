@@ -57,12 +57,12 @@ export class UsersController {
     @Res() res,
     @Body() user: UserConstructor,
   ): Promise<UserDto> {
-    const userExists = await this.userDB.exists(user);
-    if (userExists) {
-      return res.status(HttpStatus.BAD_REQUEST).json({
-        message: 'User already exists',
-      });
-    }
+    // const userExists = await this.userDB.exists(user);
+    // if (userExists) {
+    //   return res.status(HttpStatus.BAD_REQUEST).json({
+    //     message: 'User already exists',
+    //   });
+    // }
     const data = await this.userDB.create(user);
     return res.status(HttpStatus.CREATED).json({
       message: 'User Successfully Created',
@@ -77,12 +77,12 @@ export class UsersController {
     @Res() res,
     @Param('userId', ValidUserIdPipe) userId: string,
   ): Promise<UserDto> {
-    const idExists = await this.userDB.findById(userId);
-    if (!idExists) {
-      return res.status(HttpStatus.BAD_REQUEST).json({
-        message: 'User does not exist',
-      });
-    }
+    // const idExists = await this.userDB.findById(userId);
+    // if (!idExists) {
+    //   return res.status(HttpStatus.BAD_REQUEST).json({
+    //     message: 'User does not exist',
+    //   });
+    // }
     const data = await this.userDB.delete(userId);
     return res.status(HttpStatus.OK).json({
       message: 'User Successfully Deleted',
