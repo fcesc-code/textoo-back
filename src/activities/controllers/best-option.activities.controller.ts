@@ -14,8 +14,9 @@ import {
 } from '../dtos/best-option.activity.dto';
 import { BestOptionActivitiesRepository } from '../repositories/best-option.activities.repository';
 import { SharedActivitiesRepository } from '../repositories/shared.activities.repository';
+import { MODELS } from '../models/activities.models';
 
-@Controller('activities')
+@Controller(`${MODELS.root}/${MODELS.selectText}`)
 export class BestOptionActivitiesController {
   constructor(
     private activityDB: BestOptionActivitiesRepository,

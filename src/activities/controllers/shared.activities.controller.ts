@@ -1,8 +1,9 @@
 import { Controller, Get, Param, Res, HttpStatus } from '@nestjs/common';
 import { ActivityDto } from '../dtos/activities.dto';
 import { SharedActivitiesRepository } from '../repositories/shared.activities.repository';
+import { MODELS } from '../models/activities.models';
 
-@Controller('activities')
+@Controller(`${MODELS.root}`)
 export class SharedActivitiesController {
   constructor(private activityDB: SharedActivitiesRepository) {}
 

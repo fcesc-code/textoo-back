@@ -3,4 +3,5 @@ export const MODELS = {
   selectText: 'select-text-activities',
   transformAspect: 'transform-aspect-activities',
   shared: 'shared-all-activities',
+  root: 'activities',
 };
