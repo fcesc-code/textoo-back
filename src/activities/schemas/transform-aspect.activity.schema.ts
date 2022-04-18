@@ -4,18 +4,18 @@ import * as mongoose from 'mongoose';
 const TransformAspectActivityQuestionSchema = new mongoose.Schema({
   start: Number,
   end: Number,
-  providedText: String,
+  providedText: { type: String, trim: true },
   validSolutions: [String],
 });
 
 const TransformAspectActivitySchema = new mongoose.Schema(
   {
-    title: String,
-    task: String,
-    author: String,
-    type: String,
-    language: String,
-    text: String,
+    title: { type: String, trim: true },
+    task: { type: String, trim: true },
+    author: { type: String, trim: true },
+    type: { type: String, trim: true },
+    language: { type: String, trim: true },
+    text: { type: String, trim: true },
     scores: {
       scorePerQuestion: Number,
       timeToComplete: Number,
@@ -26,20 +26,15 @@ const TransformAspectActivitySchema = new mongoose.Schema(
     },
     font: {
       display: Boolean,
-      author: String,
+      author: { type: String, trim: true },
       year: Number,
-      work: String,
-      reference: String,
+      work: { type: String, trim: true },
+      reference: { type: String, trim: true },
     },
     keywords: [String],
     questions: [TransformAspectActivityQuestionSchema],
   },
   { collection: DB_ACTIVITIES_COLLECTION },
 );
-
-// const TransformAspectActivityModel = mongoose.model(
-//   'TransformAspectActivity',
-//   TransformAspectActivitySchema,
-// );
 
 export { TransformAspectActivitySchema };
