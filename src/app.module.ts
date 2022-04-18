@@ -7,9 +7,10 @@ import {
   DB_GROUPS_COLLECTION,
   DB_USERS_KEYS,
   DB_USERS_COLLECTION,
-} from 'KEYS/BBDD.KEYS';
+} from 'src/KEYS/BBDD.KEYS';
 import { ActivitiesModule } from './activities/activities.module';
 import { UsersModule } from './users/users.module';
+import { GroupsModule } from './groups/groups.module';
 
 @Module({
   imports: [
@@ -24,12 +25,13 @@ import { UsersModule } from './users/users.module';
     }),
     ActivitiesModule,
     UsersModule,
+    GroupsModule,
   ],
 })
 export class AppModule {
   constructor() {
-    console.log('DB_ACTIVITIES_KEYS: ', DB_ACTIVITIES_KEYS);
-    console.log('DB_GROUPS_KEYS: ', DB_GROUPS_KEYS);
-    console.log('DB_USERS_KEYS: ', DB_USERS_KEYS);
+    // console.log('DB_ACTIVITIES_KEYS: ', DB_ACTIVITIES_KEYS);
+    // console.log('DB_GROUPS_KEYS: ', DB_GROUPS_KEYS);
+    // console.log('DB_USERS_KEYS: ', DB_USERS_KEYS);
   }
 }

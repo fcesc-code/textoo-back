@@ -9,13 +9,13 @@ import {
   Put,
   Res,
 } from '@nestjs/common';
-import { DB_USERS_COLLECTION } from 'KEYS/BBDD.KEYS';
-import { UserConstructor, UserDto } from '../dtos/user.dto';
-import { UserRepository } from '../repositories/user.repository';
+import { DB_USERS_COLLECTION } from 'src/KEYS/BBDD.KEYS';
+import { UserConstructor, UserDto } from '../dtos/users.dtos';
+import { UsersRepository } from '../repositories/users.repository';
 
 @Controller(DB_USERS_COLLECTION)
-export class UserController {
-  constructor(private userDB: UserRepository) {}
+export class UsersController {
+  constructor(private userDB: UsersRepository) {}
 
   TITLE = 'UserController';
 
@@ -76,7 +76,7 @@ export class UserController {
   async updateUser(
     @Res() res,
     @Param('userId') userId: string,
-    @Body() changes: unknown,
+    @Body() changes: Partial<UserDto>,
   ): Promise<UserDto> {
     const userExists = await this.userDB.findById(userId);
     if (!userExists) {

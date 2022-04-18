@@ -1,4 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
+import { ObjectId } from 'mongodb';
 import { SupportedLanguages } from 'src/shared/interfaces/global.interfaces';
 
 export abstract class NewUserDto {
@@ -39,7 +40,7 @@ export abstract class NewUserDto {
 
 export abstract class UserDto extends NewUserDto {
   @ApiProperty()
-  readonly _id: string;
+  readonly _id: ObjectId;
 
   constructor({
     _id,
@@ -51,7 +52,7 @@ export abstract class UserDto extends NewUserDto {
     preferences,
   }: UserConstructor) {
     super({ alias, avatar, activeGroups, roles, likedActivities, preferences });
-    this._id = _id || null;
+    this._id = _id;
   }
 }
 
@@ -67,7 +68,7 @@ export interface UserInfo {
 }
 
 export interface UserConstructor {
-  _id?: string | null;
+  _id?: ObjectId;
   alias: string;
   avatar: string;
   activeGroups: string[];
