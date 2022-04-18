@@ -1,4 +1,5 @@
 import { Module } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import {
   DB_ACTIVITIES_KEYS,
@@ -7,12 +8,15 @@ import {
   DB_GROUPS_COLLECTION,
   DB_USERS_KEYS,
   DB_USERS_COLLECTION,
-} from 'KEYS/BBDD.KEYS';
+} from 'src/KEYS/BBDD.KEYS';
 import { ActivitiesModule } from './activities/activities.module';
 import { UsersModule } from './users/users.module';
+import { GroupsModule } from './groups/groups.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
+    ConfigModule.forRoot({ isGlobal: true }),
     MongooseModule.forRoot(DB_ACTIVITIES_KEYS, {
       connectionName: DB_ACTIVITIES_COLLECTION,
     }),
@@ -24,12 +28,8 @@ import { UsersModule } from './users/users.module';
     }),
     ActivitiesModule,
     UsersModule,
+    GroupsModule,
+    AuthModule,
   ],
 })
-export class AppModule {
-  constructor() {
-    console.log('DB_ACTIVITIES_KEYS: ', DB_ACTIVITIES_KEYS);
-    console.log('DB_GROUPS_KEYS: ', DB_GROUPS_KEYS);
-    console.log('DB_USERS_KEYS: ', DB_USERS_KEYS);
-  }
-}
+export class AppModule {}

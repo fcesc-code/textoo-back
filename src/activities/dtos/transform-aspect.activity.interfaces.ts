@@ -7,8 +7,9 @@ export interface Question_ActivityTransformAspect {
   validSolutions: string[];
 }
 
-export interface ActivityTransformAspectConstructor
+export interface TransformAspectActivityConstructor
   extends ActivityConstructor {
+  _id?: string;
   text: string;
   questions: Question_ActivityTransformAspect[];
   keywords: string[];

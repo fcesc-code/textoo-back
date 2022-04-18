@@ -1,12 +1,14 @@
 import { ApiProperty } from '@nestjs/swagger';
+import { ObjectId } from 'mongodb';
+
 import { ActivityDto } from './activity.dto';
 import { ActivityType } from './activity.interfaces';
 import {
-  ActivityTransformAspectConstructor,
+  TransformAspectActivityConstructor,
   Question_ActivityTransformAspect,
 } from './transform-aspect.activity.interfaces';
 
-export class TransformAspectActivityDto extends ActivityDto {
+export class NewTransformAspectActivityDto extends ActivityDto {
   @ApiProperty()
   readonly _text: string;
 
@@ -24,8 +26,7 @@ export class TransformAspectActivityDto extends ActivityDto {
     keywords,
     text,
     questions,
-    id,
-  }: ActivityTransformAspectConstructor) {
+  }: TransformAspectActivityConstructor) {
     super({
       type: ActivityType.BEST_OPTION,
       language,
@@ -34,7 +35,6 @@ export class TransformAspectActivityDto extends ActivityDto {
       font,
       title,
       scores,
-      id,
     });
     this.keywords = keywords;
     this.timestamps = timestamps;
@@ -55,5 +55,38 @@ export class TransformAspectActivityDto extends ActivityDto {
     this._questions = [...this._questions].filter(
       (element) => JSON.stringify(element) !== JSON.stringify(question),
     );
+  }
+}
+
+export class TransformAspectActivityDto extends NewTransformAspectActivityDto {
+  @ApiProperty()
+  readonly _id: ObjectId;
+
+  constructor({
+    _id,
+    language,
+    author,
+    task,
+    font,
+    title,
+    scores,
+    timestamps,
+    keywords,
+    text,
+    questions,
+  }: TransformAspectActivityConstructor) {
+    super({
+      language,
+      author,
+      task,
+      font,
+      title,
+      scores,
+      timestamps,
+      keywords,
+      text,
+      questions,
+    });
+    this._id = new ObjectId(_id);
   }
 }

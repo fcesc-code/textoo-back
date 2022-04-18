@@ -12,7 +12,8 @@ export interface Option_ActivityBestOption {
   index: number;
 }
 
-export interface ActivityBestOptionConstructor extends ActivityConstructor {
+export interface BestOptionActivityConstructor extends ActivityConstructor {
+  _id?: string;
   text: string;
   questions: Question_ActivityBestOption[];
   keywords: string[];

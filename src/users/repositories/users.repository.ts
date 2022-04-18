@@ -1,11 +1,11 @@
 import { Injectable } from '@nestjs/common';
 import { Model, Types } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
-import { NewUserDto, UserDto } from '../dtos/user.dto';
-import { DB_USERS_COLLECTION } from 'KEYS/BBDD.KEYS';
+import { NewUserDto, UserDto } from '../dtos/users.dtos';
+import { DB_USERS_COLLECTION } from '../../KEYS/BBDD.KEYS';
 
 @Injectable()
-export class UserRepository {
+export class UsersRepository {
   constructor(
     @InjectModel(DB_USERS_COLLECTION)
     private UserModel: Model<UserDto>,
@@ -21,6 +21,11 @@ export class UserRepository {
     return data;
   }
 
+  async findByEmail(email: string): Promise<UserDto> {
+    const data = await this.UserModel.findOne({ email }).exec();
+    return data;
+  }
+
   async create(user: NewUserDto): Promise<UserDto> {
     const userWithId: UserDto = this.addId(user);
     const data = await this.UserModel.create(userWithId);
@@ -30,7 +35,7 @@ export class UserRepository {
   addId(user: NewUserDto): UserDto {
     const userWithId: UserDto = {
       ...user,
-      _id: String(new Types.ObjectId()),
+      _id: new Types.ObjectId(),
     };
     return userWithId;
   }
@@ -46,12 +51,28 @@ export class UserRepository {
     return data;
   }
 
-  async update(userId: string, changes: any): Promise<UserDto> {
+  async update(userId: string, changes: Partial<UserDto>): Promise<UserDto> {
     const data = await this.UserModel.findByIdAndUpdate(
       { _id: userId },
       changes,
-      { new: true },
-    );
+      { returnOriginal: false },
+    ).exec();
     return data;
+  }
+
+  async aliasAlreadyExist(user: Partial<UserDto>): Promise<boolean> {
+    const exists = await this.UserModel.findOne({ alias: user.alias })
+      .limit(1)
+      .count()
+      .exec();
+    return exists > 0 ? true : false;
+  }
+
+  async emailAlreadyExist(user: Partial<UserDto>): Promise<boolean> {
+    const exists = await this.UserModel.findOne({ email: user.email })
+      .limit(1)
+      .count()
+      .exec();
+    return exists > 0 ? true : false;
   }
 }

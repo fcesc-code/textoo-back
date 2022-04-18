@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { BestOptionActivitiesController } from './best-option-activities.controller';
+import { BestOptionActivitiesController } from './best-option.activities.controller';
 
 describe('ActivitiesController', () => {
   let controller: BestOptionActivitiesController;

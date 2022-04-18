@@ -21,13 +21,11 @@ export interface Font {
 }
 
 export interface ActivityConstructor {
-  id?: string;
   language: SupportedLanguages;
   task: string;
   font: Font;
   title: string;
   author: string;
-  activityId?: string;
   scores: Score;
 }
 
