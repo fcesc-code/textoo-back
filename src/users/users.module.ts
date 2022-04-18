@@ -1,12 +1,12 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 
-import { DB_USERS_COLLECTION } from 'KEYS/BBDD.KEYS';
-import { UserController } from './controllers/user.controller';
-import { MODELS } from './models/user.models';
-import { UserRepository } from './repositories/user.repository';
+import { DB_USERS_COLLECTION } from 'src/KEYS/BBDD.KEYS';
+import { UsersController } from './controllers/users.controller';
+import { MODELS } from './models/users.models';
+import { UsersRepository } from './repositories/users.repository';
 
-import { UserSchema } from './schemas/user.schema';
+import { UserSchema } from './schemas/users.schemas';
 
 @Module({
   imports: [
@@ -20,7 +20,7 @@ import { UserSchema } from './schemas/user.schema';
       DB_USERS_COLLECTION,
     ),
   ],
-  controllers: [UserController],
-  providers: [UserRepository],
+  controllers: [UsersController],
+  providers: [UsersRepository],
 })
 export class UsersModule {}

@@ -1,4 +1,4 @@
-import { DB_ACTIVITIES_COLLECTION } from 'KEYS/BBDD.KEYS';
+import { DB_ACTIVITIES_COLLECTION } from 'src/KEYS/BBDD.KEYS';
 import * as mongoose from 'mongoose';
 
 const TransformAspectActivityQuestionSchema = new mongoose.Schema({

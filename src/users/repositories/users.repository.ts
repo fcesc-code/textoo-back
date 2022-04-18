@@ -1,11 +1,11 @@
 import { Injectable } from '@nestjs/common';
 import { Model, Types } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
-import { NewUserDto, UserDto } from '../dtos/user.dto';
-import { DB_USERS_COLLECTION } from 'KEYS/BBDD.KEYS';
+import { NewUserDto, UserDto } from '../dtos/users.dtos';
+import { DB_USERS_COLLECTION } from '../../KEYS/BBDD.KEYS';
 
 @Injectable()
-export class UserRepository {
+export class UsersRepository {
   constructor(
     @InjectModel(DB_USERS_COLLECTION)
     private UserModel: Model<UserDto>,

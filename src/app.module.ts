@@ -7,7 +7,7 @@ import {
   DB_GROUPS_COLLECTION,
   DB_USERS_KEYS,
   DB_USERS_COLLECTION,
-} from 'KEYS/BBDD.KEYS';
+} from 'src/KEYS/BBDD.KEYS';
 import { ActivitiesModule } from './activities/activities.module';
 import { UsersModule } from './users/users.module';
 
