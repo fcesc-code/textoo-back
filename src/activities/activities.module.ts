@@ -16,6 +16,7 @@ import { TransformAspectActivitySchema } from './schemas/transform-aspect.activi
 import { TransformAspectActivitiesRepository } from './repositories/transform-aspect.activities.repository';
 import { TransformAspectActivitiesController } from './controllers/transform-aspect-activities.controller';
 
+import { SharedActivitySchema } from './schemas/shared.activity.shema';
 import { SharedActivitiesRepository } from './repositories/shared.activities.repository';
 
 import { SharedActivitiesService } from './services/shared.activities.service';
@@ -35,6 +36,10 @@ import { SharedActivitiesService } from './services/shared.activities.service';
         {
           name: MODELS.transformAspect,
           schema: TransformAspectActivitySchema,
+        },
+        {
+          name: MODELS.shared,
+          schema: SharedActivitySchema,
         },
       ],
       DB_ACTIVITIES_COLLECTION,

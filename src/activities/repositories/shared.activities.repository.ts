@@ -1,14 +1,14 @@
 import { Injectable } from '@nestjs/common';
 import { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
-import { ActivityDto } from '../dtos/activities.dto';
-import { DB_ACTIVITIES_COLLECTION } from '../../KEYS/BBDD.KEYS';
+import { ActivityDto, CommonActivityDto } from '../dtos/activities.dto';
+import { MODELS } from '../models/activities.models';
 
 @Injectable()
 export class SharedActivitiesRepository {
   constructor(
-    @InjectModel(DB_ACTIVITIES_COLLECTION)
-    private ActivityModel: Model<ActivityDto>,
+    @InjectModel(MODELS.shared)
+    private ActivityModel: Model<CommonActivityDto>,
   ) {}
 
   async findAll(): Promise<ActivityDto[]> {

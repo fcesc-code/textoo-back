@@ -26,3 +26,7 @@ export type NewActivityDto =
   | (NewBestOptionActivityDto &
       NewSelectTextActivityDto &
       NewTransformAspectActivityDto);
+
+export type CommonActivityDto = BestOptionActivityDto &
+  SelectTextActivityDto &
+  TransformAspectActivityDto;
