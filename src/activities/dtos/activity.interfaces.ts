@@ -21,7 +21,6 @@ export interface Font {
 }
 
 export interface ActivityConstructor {
-  id?: string;
   language: SupportedLanguages;
   task: string;
   font: Font;

@@ -1,6 +1,6 @@
 [
   {
-    "id": "62568ab632fa9c667feb5cde",
+    "_id": "62568ab632fa9c667feb5cde",
     "timestamps": {
       "created": "2020-04-01T00:00:00.000Z",
       "modified": "2020-04-01T00:00:00.000Z"
@@ -29,7 +29,7 @@
     "keywords": ["paradoxes", "figures retòriques"]
   },
   {
-    "id": "62568aef32fa9c667feb5cdf",
+    "_id": "62568aef32fa9c667feb5cdf",
     "timestamps": {
       "created": "2020-04-01T00:00:00.000Z",
       "modified": "2020-04-01T00:00:00.000Z"
@@ -46,7 +46,7 @@
     "text": "Duia pantalons curts, és a dir, que no encara els dotze anys.\nS'han suspès tots els vols la boira.\nProposem un enfocament les polítiques de mercat.\nA la nit podríem fer peix de carn.\nplovia, vam jugar el partit.\nestalviat, ara no té més diners que el sou.",
     "questions": [
       {
-        "id": "1",
+        "_id": "1",
         "position": 38,
         "options": [
           { "text": "hauria fet", "correct": false, "index": 1 },
@@ -54,7 +54,7 @@
         ]
       },
       {
-        "id": "2",
+        "_id": "2",
         "position": 88,
         "options": [
           { "text": "degut a", "correct": false, "index": 1 },
@@ -62,7 +62,7 @@
         ]
       },
       {
-        "id": "3",
+        "_id": "3",
         "position": 121,
         "options": [
           { "text": "en base a", "correct": false, "index": 1 },
@@ -70,7 +70,7 @@
         ]
       },
       {
-        "id": "4",
+        "_id": "4",
         "position": 173,
         "options": [
           { "text": "enlloc", "correct": false, "index": 1 },
@@ -78,7 +78,7 @@
         ]
       },
       {
-        "id": "5",
+        "_id": "5",
         "position": 183,
         "options": [
           { "text": "Malgrat", "correct": false, "index": 1 },
@@ -86,7 +86,7 @@
         ]
       },
       {
-        "id": "6",
+        "_id": "6",
         "position": 212,
         "options": [
           { "text": "Al no haver", "correct": false, "index": 1 },
@@ -103,7 +103,7 @@
     }
   },
   {
-    "id": "62568b1032fa9c667feb5ce0",
+    "_id": "62568b1032fa9c667feb5ce0",
     "timestamps": {
       "created": "2020-04-01T00:00:00.000Z",
       "modified": "2020-04-01T00:00:00.000Z"

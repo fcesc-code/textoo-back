@@ -1,3 +1,5 @@
+import { ObjectId } from 'mongodb';
+
 import { ActivityConstructor, Timestamps } from './activity.interfaces';
 
 export interface Question_ActivityBestOption {
@@ -12,7 +14,8 @@ export interface Option_ActivityBestOption {
   index: number;
 }
 
-export interface ActivityBestOptionConstructor extends ActivityConstructor {
+export interface BestOptionActivityConstructor extends ActivityConstructor {
+  _id?: ObjectId;
   text: string;
   questions: Question_ActivityBestOption[];
   keywords: string[];

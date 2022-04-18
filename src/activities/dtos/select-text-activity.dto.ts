@@ -1,12 +1,14 @@
 import { ApiProperty } from '@nestjs/swagger';
+import { ObjectId } from 'mongodb';
+
 import { ActivityDto } from './activity.dto';
 import { ActivityType } from './activity.interfaces';
 import {
-  ActivitySelectTextConstructor,
+  SelectTextActivityConstructor,
   Position,
 } from './select-text.activity.interfaces';
 
-export class SelectTextActivityDto extends ActivityDto {
+export class NewSelectTextActivityDto extends ActivityDto {
   @ApiProperty()
   readonly _text: string;
 
@@ -25,8 +27,7 @@ export class SelectTextActivityDto extends ActivityDto {
     timestamps,
     text,
     positions,
-    id,
-  }: ActivitySelectTextConstructor) {
+  }: SelectTextActivityConstructor) {
     super({
       type: ActivityType.SELECT_TEXT,
       language,
@@ -36,7 +37,6 @@ export class SelectTextActivityDto extends ActivityDto {
       title,
       activityId,
       scores,
-      id,
     });
     this.keywords = keywords;
     this.timestamps = timestamps;
@@ -56,5 +56,38 @@ export class SelectTextActivityDto extends ActivityDto {
     this._positions = [...this._positions].filter(
       (element) => JSON.stringify(element) !== JSON.stringify(position),
     );
+  }
+}
+
+export class SelectTextActivityDto extends NewSelectTextActivityDto {
+  @ApiProperty()
+  readonly _id: ObjectId;
+
+  constructor({
+    _id,
+    language,
+    author,
+    task,
+    font,
+    title,
+    scores,
+    timestamps,
+    keywords,
+    text,
+    positions,
+  }: SelectTextActivityConstructor) {
+    super({
+      language,
+      author,
+      task,
+      font,
+      title,
+      scores,
+      timestamps,
+      keywords,
+      text,
+      positions,
+    });
+    this._id = _id;
   }
 }

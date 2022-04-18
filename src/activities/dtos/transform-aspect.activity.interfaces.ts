@@ -1,3 +1,5 @@
+import { ObjectId } from 'mongodb';
+
 import { ActivityConstructor, Timestamps } from './activity.interfaces';
 
 export interface Question_ActivityTransformAspect {
@@ -7,8 +9,9 @@ export interface Question_ActivityTransformAspect {
   validSolutions: string[];
 }
 
-export interface ActivityTransformAspectConstructor
+export interface TransformAspectActivityConstructor
   extends ActivityConstructor {
+  _id?: ObjectId;
   text: string;
   questions: Question_ActivityTransformAspect[];
   keywords: string[];
