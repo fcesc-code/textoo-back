@@ -8,11 +8,14 @@ import {
   DB_GROUPS_COLLECTION,
   DB_USERS_KEYS,
   DB_USERS_COLLECTION,
+  DB_RECORDS_KEYS,
+  DB_RECORDS_COLLECTION,
 } from 'src/KEYS/BBDD.KEYS';
 import { ActivitiesModule } from './activities/activities.module';
 import { UsersModule } from './users/users.module';
 import { GroupsModule } from './groups/groups.module';
 import { AuthModule } from './auth/auth.module';
+import { RecordsModule } from './records/records.module';
 
 @Module({
   imports: [
@@ -26,9 +29,13 @@ import { AuthModule } from './auth/auth.module';
     MongooseModule.forRoot(DB_USERS_KEYS, {
       connectionName: DB_USERS_COLLECTION,
     }),
-    ActivitiesModule,
+    MongooseModule.forRoot(DB_RECORDS_KEYS, {
+      connectionName: DB_RECORDS_COLLECTION,
+    }),
     UsersModule,
     GroupsModule,
+    ActivitiesModule,
+    RecordsModule,
     AuthModule,
   ],
 })
