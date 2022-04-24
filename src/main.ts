@@ -31,6 +31,8 @@ async function bootstrap() {
     },
   });
 
+  console.log('ready to go and...');
+
   await app.listen(3000);
 }
 bootstrap();
