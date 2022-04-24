@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { Model, Types } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
 import { NewGroupDto, GroupDto } from '../dtos/groups.dtos';
-import { DB_GROUPS_COLLECTION } from '../../KEYS/BBDD.KEYS';
+import { DB_GROUPS_COLLECTION } from 'keys/BBDD.KEYS';
 
 @Injectable()
 export class GroupsRepository {

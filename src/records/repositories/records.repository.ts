@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
 import { RecordDto } from '../dtos/records.dtos';
-import { DB_RECORDS_COLLECTION } from '../../KEYS/BBDD.KEYS';
+import { DB_RECORDS_COLLECTION } from 'keys/BBDD.KEYS';
 
 @Injectable()
 export class RecordsRepository {
