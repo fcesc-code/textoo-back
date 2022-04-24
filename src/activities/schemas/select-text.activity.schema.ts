@@ -1,4 +1,4 @@
-import { DB_ACTIVITIES_COLLECTION } from 'src/KEYS/BBDD.KEYS';
+import { DB_ACTIVITIES_COLLECTION } from 'keys/BBDD.KEYS';
 import * as mongoose from 'mongoose';
 
 const SelectTextActivityPositionSchema = new mongoose.Schema({

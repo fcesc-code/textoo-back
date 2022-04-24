@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 
-import { DB_RECORDS_COLLECTION } from 'src/KEYS/BBDD.KEYS';
+import { DB_RECORDS_COLLECTION } from 'keys/BBDD.KEYS';
 import { RecordsController } from './controllers/records.controller';
 import { MODELS } from './models/records.models';
 import { RecordsRepository } from './repositories/records.repository';

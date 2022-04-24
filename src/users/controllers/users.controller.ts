@@ -11,7 +11,7 @@ import {
   UseGuards,
   UsePipes,
 } from '@nestjs/common';
-import { DB_USERS_COLLECTION } from 'src/KEYS/BBDD.KEYS';
+import { DB_USERS_COLLECTION } from 'keys/BBDD.KEYS';
 import { UserConstructor, UserDto } from '../dtos/users.dtos';
 import { UsersRepository } from '../repositories/users.repository';
 import { AuthGuard } from '@nestjs/passport';
@@ -61,6 +61,7 @@ export class UsersController {
     //     message: 'User already exists',
     //   });
     // }
+    console.log('incoming', user);
     const data = await this.userDB.create(user);
     return res.status(HttpStatus.CREATED).json({
       message: 'User Successfully Created',

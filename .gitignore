@@ -174,8 +174,8 @@ temp/
 *apiconfig.*
 *SECRET*.*
 *secret*.*
-*KEYS*.*
-*keys*.*
+*KEY*.*
+*key*.*
 
 # Sass
 .sass-cache/
