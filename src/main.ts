@@ -23,13 +23,16 @@ async function bootstrap() {
     )
     .build();
   const document = SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup('API-1', app, document, {
+  SwaggerModule.setup('API', app, document, {
     explorer: true,
     swaggerOptions: {
       filter: true,
       showRequestDuration: true,
     },
   });
+
+  console.log('ready to go and...');
+  app.enableCors();
 
   await app.listen(3000);
 }

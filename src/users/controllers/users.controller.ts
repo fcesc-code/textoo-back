@@ -61,7 +61,6 @@ export class UsersController {
     //     message: 'User already exists',
     //   });
     // }
-    console.log('incoming', user);
     const data = await this.userDB.create(user);
     return res.status(HttpStatus.CREATED).json({
       message: 'User Successfully Created',

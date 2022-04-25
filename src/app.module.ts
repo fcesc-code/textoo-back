@@ -19,17 +19,24 @@ import { RecordsModule } from './records/records.module';
 
 @Module({
   imports: [
-    ConfigModule.forRoot({ isGlobal: true }),
-    MongooseModule.forRoot(DB_ACTIVITIES_KEYS, {
-      connectionName: DB_ACTIVITIES_COLLECTION,
+    ConfigModule.forRoot({
+      envFilePath: ['.env.development', '.env.production'],
+      isGlobal: true,
+      expandVariables: true,
     }),
-    MongooseModule.forRoot(DB_GROUPS_KEYS, {
+    MongooseModule.forRoot(
+      process.env.DB_ACTIVITIES_KEYS || DB_ACTIVITIES_KEYS,
+      {
+        connectionName: DB_ACTIVITIES_COLLECTION,
+      },
+    ),
+    MongooseModule.forRoot(process.env.DB_GROUPS_KEYS || DB_GROUPS_KEYS, {
       connectionName: DB_GROUPS_COLLECTION,
     }),
-    MongooseModule.forRoot(DB_USERS_KEYS, {
+    MongooseModule.forRoot(process.env.DB_USERS_KEYS || DB_USERS_KEYS, {
       connectionName: DB_USERS_COLLECTION,
     }),
-    MongooseModule.forRoot(DB_RECORDS_KEYS, {
+    MongooseModule.forRoot(process.env.DB_RECORDS_KEYS || DB_RECORDS_KEYS, {
       connectionName: DB_RECORDS_COLLECTION,
     }),
     UsersModule,

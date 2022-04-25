@@ -7,13 +7,14 @@
   "license": "UNLICENSED",
   "scripts": {
     "prebuild": "rimraf dist",
-    "build": "nest build",
-    "build:ci": "nest build --prod",
+    "build": "npm-run-all clean build:ci",
+    "build:ci": "nest build",
+    "clean": "rimraf dist",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
-    "start:prod": "node dist/main",
+    "start:prod": "node dist/src/main.js",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "lint:ci": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix --ext .ts",
     "test": "jest",
@@ -33,10 +34,12 @@
     "@nestjs/jwt": "^8.0.0",
     "@nestjs/mongoose": "^9.0.3",
     "@nestjs/passport": "^8.2.1",
-    "@nestjs/platform-express": "^8.0.0",
+    "@nestjs/platform-express": "^8.4.4",
     "@nestjs/swagger": "^5.2.1",
     "bcrypt": "^5.0.1",
     "class-validator": "^0.13.2",
+    "express": "^4.17.3",
+    "firebase-functions": "^3.20.1",
     "mongoose": "^6.2.10",
     "passport-jwt": "^4.0.0",
     "reflect-metadata": "^0.1.13",
@@ -88,5 +91,9 @@
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
+  },
+  "main": "dist/src/main.js",
+  "engines": {
+    "node": ">=16.13.2"
   }
 }

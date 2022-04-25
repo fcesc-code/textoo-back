@@ -1,10 +1,10 @@
 {
   "hosting": {
-    "public": "public",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ]
+    "public": "dist",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+  },
+  "functions": {
+    "predeploy": ["npm run lint:ci", "npm run build:ci"],
+    "source": "textoo-backend"
   }
 }

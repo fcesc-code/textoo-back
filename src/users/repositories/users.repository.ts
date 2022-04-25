@@ -3,6 +3,7 @@ import { Model, Types } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
 import { NewUserDto, UserDto } from '../dtos/users.dtos';
 import { DB_USERS_COLLECTION } from 'keys/BBDD.KEYS';
+import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class UsersRepository {
@@ -28,7 +29,12 @@ export class UsersRepository {
 
   async create(user: NewUserDto): Promise<UserDto> {
     const userWithId: UserDto = this.addId(user);
-    const data = await this.UserModel.create(userWithId);
+    const hashedUser: UserDto = {
+      ...userWithId,
+      password: await this.hashPassword(userWithId.password),
+    };
+    const data = await this.UserModel.create(hashedUser);
+    console.log('NEW USER', data);
     return data;
   }
 
@@ -73,6 +79,12 @@ export class UsersRepository {
       .limit(1)
       .count()
       .exec();
-    return exists > 0 ? true : false;
+    const result = exists > 0 ? true : false;
+    return result;
+  }
+
+  async hashPassword(password: string): Promise<string> {
+    const salt = await bcrypt.genSalt();
+    return await bcrypt.hash(password, salt);
   }
 }
