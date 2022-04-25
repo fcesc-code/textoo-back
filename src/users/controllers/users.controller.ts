@@ -11,7 +11,7 @@ import {
   UseGuards,
   UsePipes,
 } from '@nestjs/common';
-import { DB_USERS_COLLECTION } from 'src/KEYS/BBDD.KEYS';
+import { DB_USERS_COLLECTION } from 'keys/BBDD.KEYS';
 import { UserConstructor, UserDto } from '../dtos/users.dtos';
 import { UsersRepository } from '../repositories/users.repository';
 import { AuthGuard } from '@nestjs/passport';

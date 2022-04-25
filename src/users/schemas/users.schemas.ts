@@ -10,6 +10,8 @@ const UserSchema = new mongoose.Schema({
   preferences: {
     language: { type: String, trim: true },
   },
+  email: { type: String, trim: true },
+  password: { type: String, trim: true },
 });
 
 export { UserSchema };
