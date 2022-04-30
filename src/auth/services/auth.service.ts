@@ -25,7 +25,6 @@ export class AuthService {
     const user = await this.usersDB.findByEmail(email);
     const payload: JWTPayload = { _id: user._id.toString() };
     const token: string = this.jwtService.sign(payload);
-    console.log('service generating token >>> ', token);
     return {
       user_id: user._id,
       access_token: token,
@@ -41,14 +40,6 @@ export class AuthService {
     passwordInput: string,
     passwordDB: string,
   ): Promise<boolean> {
-    console.log(
-      'validate password comparative >>> ',
-      passwordInput,
-      ' >>> ',
-      passwordDB,
-      ' >>> ',
-      bcrypt.compareSync(passwordInput, passwordDB),
-    );
     return bcrypt.compareSync(passwordInput, passwordDB);
   }
 }
