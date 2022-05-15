@@ -6,7 +6,7 @@ import {
   Score,
   Timestamps,
 } from './activity.interfaces';
-import { SupportedLanguages } from 'src/shared/interfaces/global.interfaces';
+import { SupportedLanguages } from './../../shared/interfaces/global.interfaces';
 
 export abstract class ActivityDto {
   @ApiProperty()

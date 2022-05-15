@@ -1,4 +1,4 @@
-import { SupportedLanguages } from 'src/shared/interfaces/global.interfaces';
+import { SupportedLanguages } from './../src/shared/interfaces/global.interfaces';
 
 export const MOCK_ACTIVITY_SELECT_TEXT = {
   _id: '9e26ab71-a2d0-43b5-b0fa-38910b7ebe1b',

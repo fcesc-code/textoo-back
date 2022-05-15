@@ -10,7 +10,7 @@ import {
   Res,
   UseGuards,
 } from '@nestjs/common';
-import { DB_RECORDS_COLLECTION } from 'keys/BBDD.KEYS';
+import { DB_RECORDS_COLLECTION } from './../../keys/BBDD.KEYS';
 import { RecordConstructor, RecordDto } from '../dtos/records.dtos';
 import { RecordsRepository } from '../repositories/records.repository';
 import { AuthGuard } from '@nestjs/passport';

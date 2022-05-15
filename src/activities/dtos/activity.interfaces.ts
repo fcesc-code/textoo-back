@@ -1,4 +1,4 @@
-import { SupportedLanguages } from 'src/shared/interfaces/global.interfaces';
+import { SupportedLanguages } from './../../shared/interfaces/global.interfaces';
 
 export interface Timestamps {
   created: Date;

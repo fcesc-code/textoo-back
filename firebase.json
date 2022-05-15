@@ -4,7 +4,7 @@
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
   },
   "functions": {
-    "predeploy": ["npm run lint:ci", "npm run build:ci"],
-    "source": "textoo-backend"
+    "predeploy": "npm --prefix \"$RESOURCE_DIR\" run build",
+    "source": "."
   }
 }

@@ -10,7 +10,7 @@ import {
   DB_USERS_COLLECTION,
   DB_RECORDS_KEYS,
   DB_RECORDS_COLLECTION,
-} from 'keys/BBDD.KEYS';
+} from './keys/BBDD.KEYS';
 import { ActivitiesModule } from './activities/activities.module';
 import { UsersModule } from './users/users.module';
 import { GroupsModule } from './groups/groups.module';
@@ -20,7 +20,7 @@ import { RecordsModule } from './records/records.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
-      envFilePath: ['.env.development', '.env.production'],
+      envFilePath: ['.env.development.local', '.env.production.local'],
       isGlobal: true,
       expandVariables: true,
     }),

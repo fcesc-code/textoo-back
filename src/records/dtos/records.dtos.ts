@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { ObjectId } from 'mongodb';
-import { SupportedLanguages } from 'src/shared/interfaces/global.interfaces';
+import { SupportedLanguages } from './../../shared/interfaces/global.interfaces';
 
 export abstract class RecordDto {
   @ApiProperty()

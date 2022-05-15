@@ -11,7 +11,7 @@ import {
   UseGuards,
   UsePipes,
 } from '@nestjs/common';
-import { DB_GROUPS_COLLECTION } from 'keys/BBDD.KEYS';
+import { DB_GROUPS_COLLECTION } from './../../keys/BBDD.KEYS';
 import { GroupConstructor, GroupDto } from '../dtos/groups.dtos';
 import { GroupsRepository } from '../repositories/groups.repository';
 import { AuthGuard } from '@nestjs/passport';
