@@ -34,7 +34,6 @@ export class UsersRepository {
       password: await this.hashPassword(userWithId.password),
     };
     const data = await this.UserModel.create(hashedUser);
-    console.log('NEW USER', data);
     return data;
   }
 

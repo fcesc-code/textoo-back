@@ -1,0 +1,23 @@
+[{
+  "_id": "625d6de99b414be7545eabdf",
+  "alias": "This group name has changed. Cool!",
+  "avatar": "https://thispersondoesnotexist.com/image",
+  "users": [
+    "625d16c40d3a3e920b8726e2"
+  ],
+  "activitiesRecord": [
+    "120460f9-5a23-4050-95a9-4f9d1de87672"
+  ],
+  "__v": 0
+},{
+  "_id": "625d6e129b414be7545eabe4",
+  "alias": "Frankie goes to Hollywood",
+  "avatar": "https://thispersondoesnotexist.com/image",
+  "users": [
+    "625d16c40d3a3e920b8726e2"
+  ],
+  "activitiesRecord": [
+    "120460f9-5a23-4050-95a9-4f9d1de87672"
+  ],
+  "__v": 0
+}]

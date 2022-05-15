@@ -1,0 +1,98 @@
+[{
+  "_id": {
+    "$oid": "62568ab632fa9c667feb5cde"
+  },
+  "timestamps": {
+    "created": "2020-04-01T00:00:00.000Z",
+    "modified": "2020-04-01T00:00:00.000Z"
+  },
+  "author": "626589b5e9a334980d231564",
+  "type": "select_text",
+  "scores": {
+    "scorePerQuestion": 5,
+    "timeToComplete": 0
+  },
+  "language": "ca",
+  "title": "Ho veus clar?",
+  "task": "Selecciona totes les paradoxes del text",
+  "text": "És quan dormo que hi veig clar\nFoll d'una dolça metzina,\nAmb perles a cada mà\nVisc al cor d'una petxina,\nSó la font del comellar\nI el jaç de la salvatgina,\n-O la lluna que s'afina\nEn morir carena enllà.\nÉs quan dormo que hi veig clar\nFoll d'una dolça metzina.",
+  "positions": [
+    {
+      "start": 0,
+      "end": 30,
+      "index": 1
+    },
+    {
+      "start": 203,
+      "end": 233,
+      "index": 2
+    }
+  ],
+  "font": {
+    "display": true,
+    "author": "Joan Vicenç Foix",
+    "year": 1953,
+    "work": "Poemes",
+    "reference": "https://ca.wikipedia.org/wiki/Josep_Vicen%C3%A7_Foix_i_Mas"
+  },
+  "keywords": [
+    "paradoxes",
+    "figures retòriques"
+  ]
+},{
+  "_id": {
+    "$oid": "62568aef32fa9c667feb5cdf"
+  },
+  "timestamps": {
+    "created": "2020-04-01T00:00:00.000Z",
+    "modified": "2020-06-03T00:00:00.000Z"
+  },
+  "author": "626e9b4ead2aabd3e05e968c",
+  "type": "best_option",
+  "scores": {
+    "scorePerQuestion": 5,
+    "timeToComplete": 0
+  },
+  "language": "ca",
+  "title": "Qui l'encerta l'endevina",
+  "task": "Tria l'expressió correcta",
+  "text": "<p>Duia pantalons curts, és a dir, que no  encara els dotze anys.</p><p>S'han suspès tots els vols  la boira.</p><p>Proposem un enfocament  les polítiques de mercat.</p><p>A la nit podríem fer peix  de carn.</p><p> plovia, vam jugar el partit.</p><p> estalviat, ara no té més diners que el sou.</p>",
+  "font": {
+    "display": true,
+    "author": "Francesc Esteve i Gómez",
+    "year": 2011,
+    "work": "Gramàtica zero",
+    "reference": "https://www.uv.es/llengues/gramaticazero"
+  },
+  "keywords": [
+    "conjuncions"
+  ]
+},{
+  "_id": {
+    "$oid": "62568b1032fa9c667feb5ce0"
+  },
+  "timestamps": {
+    "created": "2020-04-01T00:00:00.000Z",
+    "modified": "2020-04-01T00:00:00.000Z"
+  },
+  "author": "626589b5e9a334980d231564",
+  "type": "transform_aspect",
+  "scores": {
+    "scorePerQuestion": 5,
+    "timeToComplete": 0
+  },
+  "language": "ca",
+  "title": "La veu passiva",
+  "task": "Transforma la oració següent a veu passiva",
+  "text": "1. Quan escoltava la ràdio va sentir una forta explosió.\n2. Els dos germans van votar a favor d'aprovar la llei.",
+  "font": {
+    "display": false,
+    "author": "",
+    "year": 0,
+    "work": "",
+    "reference": ""
+  },
+  "keywords": [
+    "veu passiva"
+  ]
+}]
