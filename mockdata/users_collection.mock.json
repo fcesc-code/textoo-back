@@ -1,0 +1,61 @@
+[{
+  "_id": "626584019fd54ca5d5fbc940",
+  "alias": "testalias",
+  "avatar": "avatar",
+  "activeGroups": [],
+  "roles": [
+    "1"
+  ],
+  "likedActivities": [],
+  "preferences": {
+    "language": "ca"
+  },
+  "email": "me@uoc.edu",
+  "password": "qwerasdf",
+  "__v": 0
+},{
+  "_id": "626589b5e9a334980d231564",
+  "alias": "flyingcolours",
+  "avatar": "avatar",
+  "activeGroups": [],
+  "roles": [
+    "1"
+  ],
+  "likedActivities": [],
+  "preferences": {
+    "language": "ca"
+  },
+  "email": "supertest@uoc.edu",
+  "password": "$2b$10$xeRPKce1/ezDPqGa7TyomuUcTlY/i6KkDJNzNhsUmcZfOx66.OcYu",
+  "__v": 0
+},{
+  "_id": "626e9b4ead2aabd3e05e968c",
+  "alias": "Pepito",
+  "avatar": "someavatar",
+  "activeGroups": [],
+  "roles": [
+    "1"
+  ],
+  "likedActivities": [],
+  "preferences": {
+    "language": "ca"
+  },
+  "email": "pepito@uoc.edu",
+  "password": "$2b$10$8TBti9Wy1hCDws12Owqgquw.gwXdUE.ANre4dw9l1Zfb2/rKE8mHC",
+  "__v": 0
+},{
+  "_id": "626eaed7ad2aabd3e05e96ac",
+  "alias": "nancy",
+  "avatar": "someavatar",
+  "activeGroups": [],
+  "roles": [
+    "1"
+  ],
+  "likedActivities": [],
+  "preferences": {
+    "language": "ca"
+  },
+  "email": "nancy@uoc.edu",
+  "password": "$2b$10$kqAx/mpZBJhO0WrGUuYw/eNxeR/ed4KJDkDrnflwL3XAoZwIb/Hhu",
+  "__v": 0
+}]
