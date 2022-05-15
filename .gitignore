@@ -270,3 +270,7 @@ pids
 *.pid
 *.seed
 *.pid.lock
+
+# Compiled JavaScript files
+lib/**/*.js
+lib/**/*.js.map

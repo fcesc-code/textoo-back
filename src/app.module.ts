@@ -20,7 +20,7 @@ import { RecordsModule } from './records/records.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
-      envFilePath: ['.env.development', '.env.production'],
+      envFilePath: ['.env.development.local', '.env.production.local'],
       isGlobal: true,
       expandVariables: true,
     }),
