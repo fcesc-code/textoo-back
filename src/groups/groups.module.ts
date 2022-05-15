@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 
-import { DB_GROUPS_COLLECTION } from 'keys/BBDD.KEYS';
+import { DB_GROUPS_COLLECTION } from './../../keys/BBDD.KEYS';
 import { GroupsController } from './controllers/groups.controller';
 import { MODELS } from './models/groups.models';
 import { GroupsRepository } from './repositories/groups.repository';

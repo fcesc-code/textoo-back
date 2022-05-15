@@ -1,4 +1,4 @@
-import { DB_ACTIVITIES_COLLECTION } from 'keys/BBDD.KEYS';
+import { DB_ACTIVITIES_COLLECTION } from './../../keys/BBDD.KEYS';
 import * as mongoose from 'mongoose';
 
 const BestOptionActivityOptionSchema = new mongoose.Schema({

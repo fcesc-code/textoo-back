@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 
-import { DB_ACTIVITIES_COLLECTION } from 'keys/BBDD.KEYS';
+import { DB_ACTIVITIES_COLLECTION } from './../keys/BBDD.KEYS';
 import { MODELS } from './models/activities.models';
 
 import { BestOptionActivitySchema } from './schemas/best-option.activity.schema';

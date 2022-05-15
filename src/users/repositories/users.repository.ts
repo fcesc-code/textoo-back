@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { Model, Types } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
 import { NewUserDto, UserDto } from '../dtos/users.dtos';
-import { DB_USERS_COLLECTION } from 'keys/BBDD.KEYS';
+import { DB_USERS_COLLECTION } from './../../keys/BBDD.KEYS';
 import * as bcrypt from 'bcrypt';
 
 @Injectable()
