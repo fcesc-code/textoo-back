@@ -18,8 +18,6 @@ export class SharedActivitiesController {
   constructor(private activityDB: SharedActivitiesRepository) {}
 
   @Get('/all')
-  @ApiBearerAuth('access_token')
-  @UseGuards(AuthGuard('jwt'))
   async getAll(@Res() res): Promise<ActivityDto[]> {
     const data = await this.activityDB.findAll();
     return res.status(HttpStatus.OK).json(data);
