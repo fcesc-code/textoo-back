@@ -31,7 +31,6 @@ async function bootstrap() {
     },
   });
 
-  console.log('ready to go and...');
   app.enableCors();
 
   await app.listen(3000);
