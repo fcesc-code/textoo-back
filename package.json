@@ -1,10 +1,7 @@
 {
   "name": "textoo-backend",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
   "private": true,
-  "license": "UNLICENSED",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "tsc",
@@ -43,6 +40,7 @@
     "@nestjs/swagger": "^5.2.1",
     "bcrypt": "^5.0.1",
     "class-validator": "^0.13.2",
+    "cors": "^2.8.5",
     "express": "^4.17.3",
     "firebase-admin": "^10.2.0",
     "firebase-functions": "^3.20.1",
@@ -102,5 +100,25 @@
   "main": "dist/src/index.js",
   "engines": {
     "node": "16"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fcesc-code/textoo-front.git"
+  },
+  "author": {
+    "name": "Francesc Brugarolas",
+    "url": "https://github.com/fcesc-code"
+  },
+  "description": "Language activities for teachers and lerners.",
+  "license": "CC-BY-NC-ND-4.0",
+  "bugs": {
+    "url": "https://github.com/fcesc-code/textoo-front.git/issues"
+  },
+  "homepage": "https://github.com/fcesc-code/textoo-front.git#readme",
+  "keywords": [
+    "Typescript",
+    "NestJS",
+    "Firebase",
+    "UOC"
+  ]
 }
