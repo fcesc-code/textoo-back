@@ -7,12 +7,11 @@ export class AuthController {
   constructor(private authService: AuthService) {}
 
   @Post()
-  async login(@Body() loginDTO: LoginDto): Promise<{ access_token: string }> {
+  async login(
+    @Body() loginDTO: LoginDto,
+  ): Promise<{ userId: string; accessToken: string }> {
     const { email, password } = loginDTO;
     const valid = await this.authService.validateUser(email, password);
-    console.log(
-      `DATA ---> Email: ${email}, Password: ${password}, Valid: ${valid}`,
-    );
     if (!valid) {
       throw new UnauthorizedException();
     }
