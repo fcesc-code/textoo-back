@@ -24,10 +24,10 @@ export class AuthService {
   async generateAccessToken(email: string) {
     const user = await this.usersDB.findByEmail(email);
     const payload: JWTPayload = { _id: user._id.toString() };
-    const token: string = this.jwtService.sign(payload);
+    const accessToken: string = this.jwtService.sign(payload);
     return {
-      user_id: user._id,
-      access_token: token,
+      userId: user._id.toString(),
+      accessToken: accessToken,
     };
   }
 
