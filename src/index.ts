@@ -7,12 +7,23 @@ import * as express from 'express';
 
 const server = express();
 
-// const corsOptions = {
-//   origin: ['https://textoo-fcd1f.web.app, http://localhost:4200/'],
-//   optionSuccessStatus: 200,
-//   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-//   preflightContinue: false,
-// };
+// const WHITELIST = ['https://textoo-fcd1f.web.app', 'http://localhost:4200'];
+const corsOptions = {
+  origin: 'https://textoo-fcd1f.web.app',
+  allowedHeaders: [
+    'origin',
+    'x-requested-with',
+    'content-type',
+    'accept',
+    'authorization',
+    'connection',
+    'referer',
+  ],
+  // optionSuccessStatus: 200,
+  credentials: true,
+  methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
+  preflightContinue: false,
+};
 
 export const createNestServer = async (
   expressInstance: express.Application,
@@ -21,30 +32,9 @@ export const createNestServer = async (
     AppModule,
     new ExpressAdapter(expressInstance),
   );
-  // app.use(cors(corsOptions));
 
-  // app.use(function (req, res, next) {
-  //   res.setHeader(
-  //     'Access-Control-Allow-Origin',
-  //     'https://textoo-fcd1f.web.app',
-  //   );
-  //   res.setHeader(
-  //     'Access-Control-Allow-Methods',
-  //     'GET, POST, OPTIONS, PUT, PATCH, DELETE',
-  //   );
-  //   res.setHeader(
-  //     'Access-Control-Allow-Headers',
-  //     'X-Requested-With,content-type',
-  //   );
-  //   res.setHeader('Access-Control-Allow-Credentials', true);
-  //   next();
-  // });
-
-  // app.use(cors());
-
-  // app.enableCors(corsOptions);
-
-  app.enableCors();
+  app.enableCors(corsOptions);
+  // app.enableCors();
 
   await app.init();
   return app;
