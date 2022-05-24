@@ -1,6 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app.module';
+// import cors from 'cors';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -14,11 +15,19 @@ async function bootstrap() {
         callback(new Error('Not allowed by CORS'));
       }
     },
-    allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept'],
+    allowedHeaders: [
+      'origin',
+      'x-requested-with',
+      'content-type',
+      'accept',
+      'authorization',
+      'connection',
+      'referer',
+    ],
     // optionSuccessStatus: 200,
     credentials: true,
     methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
-    preflightContinue: true,
+    preflightContinue: false,
   };
 
   const config = new DocumentBuilder()
@@ -35,7 +44,8 @@ async function bootstrap() {
         description: 'Enter JWT token',
         in: 'header',
       },
-      'access_token',
+      'accessToken',
+      //'access_token',
     )
     .build();
   const document = SwaggerModule.createDocument(app, config);
@@ -47,23 +57,23 @@ async function bootstrap() {
     },
   });
 
-  // app.use(function (req, res, next) {
-  //   console.log('req.headers', req.headers);
-  //   res.setHeader(
-  //     'Access-Control-Allow-Origin',
-  //     'https://textoo-fcd1f.web.app, http://localhost:4200',
-  //   );
-  //   res.setHeader(
-  //     'Access-Control-Allow-Methods',
-  //     'GET, POST, OPTIONS, PUT, PATCH, DELETE',
-  //   );
-  //   res.setHeader(
-  //     'Access-Control-Allow-Headers',
-  //     'Origin, X-Requested-With, Content-Type, Accept',
-  //   );
-  //   res.setHeader('Access-Control-Allow-Credentials', true);
-  //   next();
-  // });
+  app.use(function (req, res, next) {
+    console.log('req.headers', req.headers);
+    //   res.setHeader(
+    //     'Access-Control-Allow-Origin',
+    //     'https://textoo-fcd1f.web.app, http://localhost:4200',
+    //   );
+    //   res.setHeader(
+    //     'Access-Control-Allow-Methods',
+    //     'GET, POST, OPTIONS, PUT, PATCH, DELETE',
+    //   );
+    //   res.setHeader(
+    //     'Access-Control-Allow-Headers',
+    //     'Origin, X-Requested-With, Content-Type, Accept',
+    //   );
+    //   res.setHeader('Access-Control-Allow-Credentials', true);
+    next();
+  });
 
   // app.use(function (req, res, next) {
   //   console.log('res.headers', res.headers);
@@ -74,6 +84,8 @@ async function bootstrap() {
   //   // res.setHeader('Access-Control-Allow-Credentials', true);
   //   next();
   // });
+
+  // app.use(cors(corsOptions));
 
   app.enableCors(corsOptions);
 
