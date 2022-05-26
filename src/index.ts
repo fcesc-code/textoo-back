@@ -10,6 +10,7 @@ const server = express();
 const WHITELIST = [
   'https://textoo-fcd1f.web.app/',
   'https://textoo-fcd1f.web.app',
+  'http://localhost:4200/',
   'http://localhost:4200',
   '*',
   undefined,
@@ -87,9 +88,23 @@ export const createNestServer = async (
     new ExpressAdapter(expressInstance),
   );
 
+  app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header(
+      'Access-Control-Allow-Methods',
+      'GET,PUT,POST,DELETE,OPTIONS,PATCH',
+    );
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Accept');
+    next();
+  });
+
   app.enableCors(corsOptions);
   // app.enableCors();
   // app.enableCors({ origin: true });
+  // app.enableCors({
+  //   origin: '*',
+  //   allowedHeaders: '*',
+  // });
 
   await app.init();
   return app;
