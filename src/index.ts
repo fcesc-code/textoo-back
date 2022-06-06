@@ -3,6 +3,7 @@ import { ExpressAdapter } from '@nestjs/platform-express';
 import { AppModule } from './app.module';
 import * as functions from 'firebase-functions';
 import * as express from 'express';
+// import * as compression from 'compression';
 // import cors from 'cors';
 
 const server = express();
@@ -87,6 +88,8 @@ export const createNestServer = async (
     AppModule,
     new ExpressAdapter(expressInstance),
   );
+
+  // app.use(compression());
 
   app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
